@@ -1,0 +1,80 @@
+C:\Users\Afreitas\Documents\Projeto SINCOL PDV\BLL\DAL\bin\Debug\DAL.dll
+C:\Users\Afreitas\Documents\Projeto SINCOL PDV\BLL\DAL\bin\Debug\DAL.pdb
+C:\Users\Afreitas\Documents\Projeto SINCOL PDV\BLL\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Afreitas\Documents\Projeto SINCOL PDV\BLL\DAL\obj\Debug\DAL.dll
+C:\Users\Afreitas\Documents\Projeto SINCOL PDV\BLL\DAL\obj\Debug\DAL.pdb
+C:\Users\Afreitas\Documents\Projeto SINCOL PDV\SincolPDV\DAL\bin\Debug\DAL.dll
+C:\Users\Afreitas\Documents\Projeto SINCOL PDV\SincolPDV\DAL\bin\Debug\DAL.pdb
+C:\Users\Afreitas\Documents\Projeto SINCOL PDV\SincolPDV\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Afreitas\Documents\Projeto SINCOL PDV\SincolPDV\DAL\obj\Debug\DAL.dll
+C:\Users\Afreitas\Documents\Projeto SINCOL PDV\SincolPDV\DAL\obj\Debug\DAL.pdb
+C:\Users\Afreitas\Documents\Projeto SINCOL PDV\SincolPDV_Web\SincolPDV\DAL\bin\Debug\DAL.dll
+C:\Users\Afreitas\Documents\Projeto SINCOL PDV\SincolPDV_Web\SincolPDV\DAL\bin\Debug\DAL.pdb
+C:\Users\Afreitas\Documents\Projeto SINCOL PDV\SincolPDV_Web\SincolPDV\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Afreitas\Documents\Projeto SINCOL PDV\SincolPDV_Web\SincolPDV\DAL\obj\Debug\DAL.dll
+C:\Users\Afreitas\Documents\Projeto SINCOL PDV\SincolPDV_Web\SincolPDV\DAL\obj\Debug\DAL.pdb
+C:\Users\Afreitas\Desktop\SincolPDV_Web\projeto-liquido-3\DAL\bin\Debug\DAL.dll
+C:\Users\Afreitas\Desktop\SincolPDV_Web\projeto-liquido-3\DAL\bin\Debug\DAL.pdb
+C:\Users\Afreitas\Desktop\SincolPDV_Web\projeto-liquido-3\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Afreitas\Desktop\SincolPDV_Web\projeto-liquido-3\DAL\obj\Debug\DAL.dll
+C:\Users\Afreitas\Desktop\SincolPDV_Web\projeto-liquido-3\DAL\obj\Debug\DAL.pdb
+C:\Users\Afreitas\Desktop\SincolPDV_Web-Atual\SincolPDV\DAL\bin\Debug\DAL.dll
+C:\Users\Afreitas\Desktop\SincolPDV_Web-Atual\SincolPDV\DAL\bin\Debug\DAL.pdb
+C:\Users\Afreitas\Desktop\SincolPDV_Web-Atual\SincolPDV\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Afreitas\Desktop\SincolPDV_Web-Atual\SincolPDV\DAL\obj\Debug\DAL.dll
+C:\Users\Afreitas\Desktop\SincolPDV_Web-Atual\SincolPDV\DAL\obj\Debug\DAL.pdb
+M:\Projeto SINCOL PDV\SincolPDV_Web\SincolPDV\DAL\bin\Debug\DAL.dll
+M:\Projeto SINCOL PDV\SincolPDV_Web\SincolPDV\DAL\bin\Debug\DAL.pdb
+M:\Projeto SINCOL PDV\SincolPDV_Web\SincolPDV\DAL\obj\Debug\ResolveAssemblyReference.cache
+M:\Projeto SINCOL PDV\SincolPDV_Web\SincolPDV\DAL\obj\Debug\DAL.dll
+M:\Projeto SINCOL PDV\SincolPDV_Web\SincolPDV\DAL\obj\Debug\DAL.pdb
+C:\Users\criação\Desktop\SincolPDV_Web-Atual\SincolPDV_Web-Atual\SincolPDV_Web\SincolPDV\DAL\bin\Debug\DAL.dll
+C:\Users\criação\Desktop\SincolPDV_Web-Atual\SincolPDV_Web-Atual\SincolPDV_Web\SincolPDV\DAL\bin\Debug\DAL.pdb
+C:\Users\criação\Desktop\SincolPDV_Web-Atual\SincolPDV_Web-Atual\SincolPDV_Web\SincolPDV\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\criação\Desktop\SincolPDV_Web-Atual\SincolPDV_Web-Atual\SincolPDV_Web\SincolPDV\DAL\obj\Debug\DAL.dll
+C:\Users\criação\Desktop\SincolPDV_Web-Atual\SincolPDV_Web-Atual\SincolPDV_Web\SincolPDV\DAL\obj\Debug\DAL.pdb
+C:\Users\aluno\Desktop\SincolPDV_Web-Atual\SincolPDV_Web-Atual\SincolPDV_Web\SincolPDV\DAL\bin\Debug\DAL.dll
+C:\Users\aluno\Desktop\SincolPDV_Web-Atual\SincolPDV_Web-Atual\SincolPDV_Web\SincolPDV\DAL\bin\Debug\DAL.pdb
+C:\Users\aluno\Desktop\SincolPDV_Web-Atual\SincolPDV_Web-Atual\SincolPDV_Web\SincolPDV\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\aluno\Desktop\SincolPDV_Web-Atual\SincolPDV_Web-Atual\SincolPDV_Web\SincolPDV\DAL\obj\Debug\DAL.dll
+C:\Users\aluno\Desktop\SincolPDV_Web-Atual\SincolPDV_Web-Atual\SincolPDV_Web\SincolPDV\DAL\obj\Debug\DAL.pdb
+C:\Users\criação\Desktop\SincolPDV_Web-Atual\SincolPDV\DAL\bin\Debug\DAL.dll
+C:\Users\criação\Desktop\SincolPDV_Web-Atual\SincolPDV\DAL\bin\Debug\DAL.pdb
+C:\Users\criação\Desktop\SincolPDV_Web-Atual\SincolPDV\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\criação\Desktop\SincolPDV_Web-Atual\SincolPDV\DAL\obj\Debug\DAL.dll
+C:\Users\criação\Desktop\SincolPDV_Web-Atual\SincolPDV\DAL\obj\Debug\DAL.pdb
+C:\Users\Administrador\Desktop\Nutryx e Agile\Sistema\SincolPDV_Web-Atual\SincolPDV\DAL\bin\Debug\DAL.dll
+C:\Users\Administrador\Desktop\Nutryx e Agile\Sistema\SincolPDV_Web-Atual\SincolPDV\DAL\bin\Debug\DAL.pdb
+C:\Users\Administrador\Desktop\Nutryx e Agile\Sistema\SincolPDV_Web-Atual\SincolPDV\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrador\Desktop\Nutryx e Agile\Sistema\SincolPDV_Web-Atual\SincolPDV\DAL\obj\Debug\DAL.dll
+C:\Users\Administrador\Desktop\Nutryx e Agile\Sistema\SincolPDV_Web-Atual\SincolPDV\DAL\obj\Debug\DAL.pdb
+C:\Users\Administrador\Desktop\SincolPDV_Web-Atual\SincolPDV\DAL\bin\Debug\DAL.dll
+C:\Users\Administrador\Desktop\SincolPDV_Web-Atual\SincolPDV\DAL\bin\Debug\DAL.pdb
+C:\Users\Administrador\Desktop\SincolPDV_Web-Atual\SincolPDV\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrador\Desktop\SincolPDV_Web-Atual\SincolPDV\DAL\obj\Debug\DAL.dll
+C:\Users\Administrador\Desktop\SincolPDV_Web-Atual\SincolPDV\DAL\obj\Debug\DAL.pdb
+C:\Users\André\Desktop\Área de Trabalho Antiga\SincolPDV_Web-Atual\SincolPDV\DAL\bin\Debug\DAL.dll
+C:\Users\André\Desktop\Área de Trabalho Antiga\SincolPDV_Web-Atual\SincolPDV\DAL\bin\Debug\DAL.pdb
+C:\Users\André\Desktop\Área de Trabalho Antiga\SincolPDV_Web-Atual\SincolPDV\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\André\Desktop\Área de Trabalho Antiga\SincolPDV_Web-Atual\SincolPDV\DAL\obj\Debug\DAL.dll
+C:\Users\André\Desktop\Área de Trabalho Antiga\SincolPDV_Web-Atual\SincolPDV\DAL\obj\Debug\DAL.pdb
+C:\Users\Afreitas\Desktop\SincolPDV_Web-Atual-Full\SincolPDV\DAL\bin\Debug\DAL.dll
+C:\Users\Afreitas\Desktop\SincolPDV_Web-Atual-Full\SincolPDV\DAL\bin\Debug\DAL.pdb
+C:\Users\Afreitas\Desktop\SincolPDV_Web-Atual-Full\SincolPDV\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Afreitas\Desktop\SincolPDV_Web-Atual-Full\SincolPDV\DAL\obj\Debug\DAL.dll
+C:\Users\Afreitas\Desktop\SincolPDV_Web-Atual-Full\SincolPDV\DAL\obj\Debug\DAL.pdb
+C:\Users\André\Desktop\SincolPDV_Web-Atual\SincolPDV_WEB\SincolPDV\DAL\bin\Debug\DAL.dll
+C:\Users\André\Desktop\SincolPDV_Web-Atual\SincolPDV_WEB\SincolPDV\DAL\bin\Debug\DAL.pdb
+C:\Users\André\Desktop\SincolPDV_Web-Atual\SincolPDV_WEB\SincolPDV\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\André\Desktop\SincolPDV_Web-Atual\SincolPDV_WEB\SincolPDV\DAL\obj\Debug\DAL.dll
+C:\Users\André\Desktop\SincolPDV_Web-Atual\SincolPDV_WEB\SincolPDV\DAL\obj\Debug\DAL.pdb
+C:\Users\Samsung\Desktop\SincolPDV_monique\DAL\bin\Debug\DAL.dll
+C:\Users\Samsung\Desktop\SincolPDV_monique\DAL\bin\Debug\DAL.pdb
+C:\Users\Samsung\Desktop\SincolPDV_monique\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Samsung\Desktop\SincolPDV_monique\DAL\obj\Debug\DAL.dll
+C:\Users\Samsung\Desktop\SincolPDV_monique\DAL\obj\Debug\DAL.pdb
+C:\Users\André\Desktop\SincolPDV_Web-Atual\SVN_Servidor\Lithium\Projetos\SincolPDV\DAL\bin\Debug\DAL.dll
+C:\Users\André\Desktop\SincolPDV_Web-Atual\SVN_Servidor\Lithium\Projetos\SincolPDV\DAL\bin\Debug\DAL.pdb
+C:\Users\André\Desktop\SincolPDV_Web-Atual\SVN_Servidor\Lithium\Projetos\SincolPDV\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\André\Desktop\SincolPDV_Web-Atual\SVN_Servidor\Lithium\Projetos\SincolPDV\DAL\obj\Debug\DAL.dll
+C:\Users\André\Desktop\SincolPDV_Web-Atual\SVN_Servidor\Lithium\Projetos\SincolPDV\DAL\obj\Debug\DAL.pdb

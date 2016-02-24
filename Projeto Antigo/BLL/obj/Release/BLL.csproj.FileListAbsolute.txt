@@ -1,0 +1,7 @@
+C:\Users\Afreitas\Documents\Projeto SINCOL PDV\BLL\BLL\bin\Release\BLL.dll
+C:\Users\Afreitas\Documents\Projeto SINCOL PDV\BLL\BLL\bin\Release\BLL.pdb
+C:\Users\Afreitas\Documents\Projeto SINCOL PDV\BLL\BLL\bin\Release\DAL.dll
+C:\Users\Afreitas\Documents\Projeto SINCOL PDV\BLL\BLL\bin\Release\DAL.pdb
+C:\Users\Afreitas\Documents\Projeto SINCOL PDV\BLL\BLL\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Afreitas\Documents\Projeto SINCOL PDV\BLL\BLL\obj\Release\BLL.dll
+C:\Users\Afreitas\Documents\Projeto SINCOL PDV\BLL\BLL\obj\Release\BLL.pdb
