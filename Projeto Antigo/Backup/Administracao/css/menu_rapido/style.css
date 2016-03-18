@@ -1,0 +1,80 @@
+*, html {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	margin: 0px;
+	padding: 0px;
+	font-size: 12px;
+}
+
+a {
+	color: #0099CC;
+}
+
+body {
+	margin: 10px;
+}
+div#drop-esquerda {
+	width: 130px;
+	float: left;
+	margin-top: 3px;
+	margin-right: 3px;
+	margin-bottom: 3px;
+}
+div#drop-direita {
+	width: 130px;
+	float: left;
+	margin-top: 3px;
+	margin-right: 3px;
+	margin-bottom: 3px;
+}
+div.recebeDrag {
+	min-height: 50px;
+}
+div.itemDrag {
+	border: 1px solid #ccc;
+	margin-top: 7px;
+	margin-right: 7px;
+	margin-bottom: 7px;
+}
+h2
+{
+    cursor: move !important;
+    background-color: #333333;
+    color: #FFFFFF;
+    padding: 3px;
+    text-align: center;
+}
+.dragAjuda {
+	border: 3px dashed #999999;
+	width: auto !important;
+}
+.dragAtivo {
+	background-color: #f7f7f7;
+}
+.dragHover {
+	background-color: #F0F1FF;
+}
+.menu_rapido_caixa
+{
+    width: 110px;
+    height: 110px;
+    text-decoration: none;
+}
+.caixa_menu
+{
+    margin: 0px 10px 0px 0px;
+    width: 120px;
+    height: 100px;
+    background-color: #F0F0F0;
+    font-size: 14px;
+    color: #333333;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    float: left;
+    padding-top: 10px;
+}
+.caixa_menu:hover
+{
+    background: rgba(177, 179, 180, 0.5);
+}

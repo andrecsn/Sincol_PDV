@@ -11,7 +11,7 @@ namespace SincolPDV.Dominio
         public int ClienteID { get; set; }
         public string Nome { get; set; }
         public string tp_pessoa { get; set; }
-        public int Status { get; set; }
+        public bool Status { get; set; }
         public string CPF { get; set; }
         public string CNPJ { get; set; }
         public string Telefone { get; set; }

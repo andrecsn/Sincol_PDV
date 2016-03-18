@@ -1,0 +1,68 @@
+.corpo
+{
+    height: 100%;
+    width: 740px;
+}
+body{
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 13px;
+	color: #666;
+}
+.field{
+	color:#333;
+	font-weight: bold;
+}
+
+.separacao {
+	height: 10px;
+	width: 100%;
+	border-bottom-width: thin;
+	border-bottom-style: dashed;
+	border-bottom-color: #CCC;
+}
+
+.button_form {
+	-moz-box-shadow:inset 0px 1px 0px 0px #adadad;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #adadad;
+	box-shadow:inset 0px 1px 0px 0px #adadad;
+	background-color:#383838;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	border:1px solid #000000;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Trebuchet MS;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #000000;
+}.button_form:hover {
+	background-color:#000000;
+}.button_form:active {
+	position:relative;
+	top:1px;
+}
+
+
+.button_logout {
+	background-color:#000000;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	border:1px solid #000000;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Trebuchet MS;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #000000;
+}.button_logout:hover {
+	background-color:#000000;
+}.button_logout:active {
+	position:relative;
+	top:1px;
+}

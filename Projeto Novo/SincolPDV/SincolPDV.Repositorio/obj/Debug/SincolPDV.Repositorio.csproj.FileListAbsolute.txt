@@ -1,0 +1,12 @@
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\bin\Debug\SincolPDV.Repositorio.dll.config
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\bin\Debug\SincolPDV.Repositorio.dll
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\bin\Debug\SincolPDV.Repositorio.pdb
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\bin\Debug\EntityFramework.dll
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\bin\Debug\SincolPDV.Dominio.dll
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\bin\Debug\SincolPDV.Dominio.pdb
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\bin\Debug\EntityFramework.xml
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\obj\Debug\SincolPDV.Repositorio.csprojResolveAssemblyReference.cache
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\obj\Debug\SincolPDV.Repositorio.dll
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\obj\Debug\SincolPDV.Repositorio.pdb
