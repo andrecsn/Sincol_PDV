@@ -1,0 +1,35 @@
+﻿@model SincolPDV.Dominio.Cliente
+
+@{
+    ViewBag.Title = "Deletar Cliente";
+    Layout = null;
+}
+
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header btn-danger">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+            <h3 class="modal-title">Deletar Cliente</h3>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="box-body">
+
+                    <h4>Deseja realmente deletar o Cliente <b> @Model.Nome? </b></h4>
+
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <input type="submit" value="Deletar" class="btn btn-danger" />
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+            }
+        </div>
+    </div>
+</div>
+

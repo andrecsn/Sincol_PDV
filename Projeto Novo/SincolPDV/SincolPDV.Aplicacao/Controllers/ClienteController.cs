@@ -8,27 +8,29 @@ using System.Web;
 using System.Web.Mvc;
 using SincolPDV.Dominio;
 using SincolPDV.Repositorio.Compartilhado;
+using SincolPDV.Repositorio.Implementacao;
 
 namespace SincolPDV.Aplicacao.Controllers
 {
     public class ClienteController : Controller
     {
         private Contexto db = new Contexto();
+        private ClienteRepositorio clienteRepositorio = new ClienteRepositorio();
 
         // GET: Cliente
         public ActionResult Index()
         {
-            return View(db.Cliente.ToList());
+            return View(clienteRepositorio.ListarTodos());
         }
 
-        // GET: Cliente/Details/5
-        public ActionResult Details(int? id)
+        [HttpGet]
+        public ActionResult DetalhesCliente(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cliente cliente = db.Cliente.Find(id);
+            Cliente cliente = clienteRepositorio.Listar(x => x.ClienteID == id).FirstOrDefault();
             if (cliente == null)
             {
                 return HttpNotFound();
@@ -52,8 +54,9 @@ namespace SincolPDV.Aplicacao.Controllers
                 cliente.DtCadastro = DateTime.Now;
                 cliente.DtAtualizacao = DateTime.Now;
 
-                db.Cliente.Add(cliente);
-                db.SaveChanges();
+                clienteRepositorio.Adicionar(cliente);
+                clienteRepositorio.SalvarTodos();
+
                 return RedirectToAction("Index");
             }
 
@@ -61,13 +64,13 @@ namespace SincolPDV.Aplicacao.Controllers
         }
 
         // GET: Cliente/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult EditarCliente(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cliente cliente = db.Cliente.Find(id);
+            Cliente cliente = clienteRepositorio.Listar(x => x.ClienteID == id).FirstOrDefault();
             if (cliente == null)
             {
                 return HttpNotFound();
@@ -76,29 +79,29 @@ namespace SincolPDV.Aplicacao.Controllers
         }
 
         // POST: Cliente/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ClienteID,Nome,tp_pessoa,Status,CPF,CNPJ,Telefone,Endereco,Sexo,DtNascimento,Email,DtCadastro,DtAtualizacao,LimiteCredito,LimiteDias,Observacao")] Cliente cliente)
+        public ActionResult EditarCliente(Cliente cliente)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(cliente).State = EntityState.Modified;
-                db.SaveChanges();
+                clienteRepositorio.Atualizar(cliente);
+                clienteRepositorio.SalvarTodos();
+
                 return RedirectToAction("Index");
             }
+
             return View(cliente);
         }
 
         // GET: Cliente/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult DeletarCliente(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cliente cliente = db.Cliente.Find(id);
+            Cliente cliente = clienteRepositorio.Listar(x => x.ClienteID == id).FirstOrDefault();
             if (cliente == null)
             {
                 return HttpNotFound();
@@ -107,13 +110,15 @@ namespace SincolPDV.Aplicacao.Controllers
         }
 
         // POST: Cliente/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("DeletarCliente")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Cliente cliente = db.Cliente.Find(id);
-            db.Cliente.Remove(cliente);
-            db.SaveChanges();
+            Cliente cliente = clienteRepositorio.Listar(x => x.ClienteID == id).FirstOrDefault();
+
+            clienteRepositorio.Excluir(x => x == cliente);
+            clienteRepositorio.SalvarTodos();
+
             return RedirectToAction("Index");
         }
 

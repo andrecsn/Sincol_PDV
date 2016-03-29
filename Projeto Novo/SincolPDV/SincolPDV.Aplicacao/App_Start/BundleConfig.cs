@@ -48,9 +48,9 @@ namespace SincolPDV.Aplicacao
                       "~/Plugins/css/datatables/dataTables.bootstrap.css"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap.min.css",
                       "~/Content/AdminLTE.min.css",
-                      "~/Content/skin-blue.min.css"));
+                      "~/Content/_all-skins.min.css"));
         }
     }
 }

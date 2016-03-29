@@ -15,6 +15,8 @@ C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.
 C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\bin\SincolPDV.Aplicacao.dll
 C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\bin\SincolPDV.Aplicacao.pdb
 C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\bin\Antlr3.Runtime.dll
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\bin\EntityFramework.dll
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\bin\EntityFramework.SqlServer.dll
 C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\bin\Microsoft.AI.Agent.Intercept.dll
 C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\bin\Microsoft.AI.DependencyCollector.dll
 C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\bin\Microsoft.AI.PerfCounterCollector.dll
@@ -35,9 +37,10 @@ C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.
 C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\bin\System.Web.WebPages.dll
 C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\bin\System.Web.WebPages.Razor.dll
 C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\bin\WebGrease.dll
-C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\bin\EntityFramework.dll
 C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\bin\SincolPDV.Dominio.pdb
 C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\bin\SincolPDV.Repositorio.pdb
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\bin\EntityFramework.xml
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\bin\EntityFramework.SqlServer.xml
 C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\bin\Microsoft.AI.DependencyCollector.xml
 C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\bin\Microsoft.AI.Web.xml
@@ -53,9 +56,6 @@ C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.
 C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\bin\System.Web.WebPages.Razor.xml
 C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\bin\Antlr3.Runtime.pdb
 C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\bin\Newtonsoft.Json.xml
-C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\bin\EntityFramework.xml
 C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\obj\Debug\SincolPDV.Aplicacao.csprojResolveAssemblyReference.cache
 C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\obj\Debug\SincolPDV.Aplicacao.dll
 C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\obj\Debug\SincolPDV.Aplicacao.pdb
-C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\bin\EntityFramework.SqlServer.dll
-C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\bin\EntityFramework.SqlServer.xml
