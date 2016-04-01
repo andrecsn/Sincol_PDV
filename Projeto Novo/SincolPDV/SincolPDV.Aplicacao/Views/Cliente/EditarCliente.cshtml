@@ -6,13 +6,11 @@
 }
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("EditarCliente", "Cliente", FormMethod.Post, new { id = "formDados" }))
 {
     @Html.AntiForgeryToken()
 
-    @Html.HiddenFor(model => model.ClienteID)
-
-    <div class="modal-dialog">
+    <div class="modal-dialog" id="modal">
         <div class="modal-content">
             <div class="modal-header btn-success">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
@@ -21,6 +19,8 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="box-body">
+
+                        @Html.HiddenFor(model => model.ClienteID)
 
                         <div class="col-md-4">
                             <div class="form-group">
@@ -174,7 +174,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <input type="submit" value="Salvar Alteração" class="btn btn-success" />
+                <input type="button" value="Salvar Alteração" class="btn btn-success" onclick="Editar()" />
                 <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
             </div>
         </div><!-- /.modal-content -->

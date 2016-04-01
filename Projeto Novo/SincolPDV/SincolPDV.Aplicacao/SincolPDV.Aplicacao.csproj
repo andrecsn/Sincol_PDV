@@ -312,6 +312,7 @@
     <Content Include="Plugins\css\square\yellow.css" />
     <Content Include="Plugins\css\square\yellow.png" />
     <Content Include="Plugins\css\square\_all.css" />
+    <Content Include="Plugins\css\toast\jquery.toast.css" />
     <Content Include="Plugins\js\bootstrap-colorpicker.min.js" />
     <Content Include="Plugins\js\bootstrap-timepicker.min.js" />
     <Content Include="Plugins\js\datatables\dataTables.bootstrap.min.js" />
@@ -325,6 +326,7 @@
     <Content Include="Plugins\js\jquery.inputmask.js" />
     <Content Include="Plugins\js\jquery.slimscroll.min.js" />
     <Content Include="Plugins\js\select2.full.min.js" />
+    <Content Include="Plugins\js\toast\jquery.toast.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\app.min.js" />

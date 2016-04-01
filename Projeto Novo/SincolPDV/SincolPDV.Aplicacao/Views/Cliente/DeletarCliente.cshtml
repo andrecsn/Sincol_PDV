@@ -22,11 +22,13 @@
             </div>
         </div>
         <div class="modal-footer">
-            @using (Html.BeginForm())
+            @using (Html.BeginForm("DeletarCliente", "Cliente", FormMethod.Post, new { id = "formDados" }))
             {
                 @Html.AntiForgeryToken()
 
-                <input type="submit" value="Deletar" class="btn btn-danger" />
+                @Html.HiddenFor(model => model.ClienteID)
+
+                <input type="button" value="Deletar" class="btn btn-danger" onclick="Deletar()" />
                 <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
             }
         </div>

@@ -81,17 +81,36 @@ namespace SincolPDV.Aplicacao.Controllers
         // POST: Cliente/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditarCliente(Cliente cliente)
+        public void EditarCliente(Cliente clie)
         {
-            if (ModelState.IsValid)
+            Cliente cliente = clienteRepositorio.Listar(x => x.ClienteID == clie.ClienteID).FirstOrDefault();
+            try
             {
-                clienteRepositorio.Atualizar(cliente);
-                clienteRepositorio.SalvarTodos();
+                if (ModelState.IsValid)
+                {
+                    cliente.Nome = clie.Nome;
+                    cliente.Sexo = clie.Sexo;
+                    cliente.Email = clie.Email;
+                    cliente.tp_pessoa = clie.tp_pessoa;
+                    cliente.CPF = clie.CPF;
+                    cliente.CNPJ = clie.CNPJ;
+                    cliente.Telefone = clie.Telefone;
+                    cliente.Endereco = clie.Endereco;
+                    cliente.DtNascimento = clie.DtNascimento;
+                    cliente.LimiteCredito = clie.LimiteCredito;
+                    cliente.LimiteDias = clie.LimiteDias;
+                    cliente.Status = clie.Status;
+                    cliente.DtAtualizacao = DateTime.Now;
 
-                return RedirectToAction("Index");
+                    clienteRepositorio.Atualizar(cliente);
+                    clienteRepositorio.SalvarTodos();
+                }
             }
+            catch (Exception)
+            {
 
-            return View(cliente);
+                throw;
+            }
         }
 
         // GET: Cliente/Delete/5
@@ -112,14 +131,19 @@ namespace SincolPDV.Aplicacao.Controllers
         // POST: Cliente/Delete/5
         [HttpPost, ActionName("DeletarCliente")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public void DeleteConfirmed(Cliente clie)
         {
-            Cliente cliente = clienteRepositorio.Listar(x => x.ClienteID == id).FirstOrDefault();
+            try
+            {
+                Cliente cliente = clienteRepositorio.Listar(x => x.ClienteID == clie.ClienteID).FirstOrDefault();
 
-            clienteRepositorio.Excluir(x => x == cliente);
-            clienteRepositorio.SalvarTodos();
-
-            return RedirectToAction("Index");
+                clienteRepositorio.Excluir(x => x == cliente);
+                clienteRepositorio.SalvarTodos();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         protected override void Dispose(bool disposing)
