@@ -27,6 +27,9 @@ namespace SincolPDV.Aplicacao
             bundles.Add(new ScriptBundle("~/Plugins/js/toast").Include(
                       "~/Plugins/js/toast/jquery.toast.js"));
 
+            bundles.Add(new ScriptBundle("~/Plugins/js/uteis").Include(
+                      "~/Plugins/_uteis.js"));
+
             bundles.Add(new StyleBundle("~/Plugins/css/toast").Include(
                       "~/Plugins/css/toast/jquery.toast.css"));
 

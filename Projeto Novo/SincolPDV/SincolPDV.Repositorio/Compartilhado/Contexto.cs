@@ -33,6 +33,7 @@ namespace SincolPDV.Repositorio.Compartilhado
         public DbSet<Transacao> Transacao { get; set; }
         public DbSet<Transferencia> Transferencia { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<Status> Status { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

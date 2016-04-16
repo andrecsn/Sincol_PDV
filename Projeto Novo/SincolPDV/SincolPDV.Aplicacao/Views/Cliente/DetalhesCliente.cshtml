@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Details";
-    Layout = null; 
+    Layout = null;
 }
 
 
@@ -11,87 +11,87 @@
     <div class="modal-content">
         <div class="modal-header btn-primary">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-            <h3 class="modal-title">Detalhes do produto</h3>
+            <h3 class="modal-title"><i class="glyphicon glyphicon-file"></i> Detalhes do cliente</h3>
         </div>
         <div class="modal-body">
-            <dl class="dl-horizontal">
-                <dt>
-                    @Html.DisplayNameFor(model => model.Nome)
-                </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.Nome)
-                </dd>
+            <form class="form-horizontal">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Nome: </label>
+                        <div class="col-sm-8">
+                            @Html.DisplayFor(model => model.Nome)
+                        </div>
+                    </div>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.tp_pessoa)
-                </dt>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Tipo Pessoa: </label>
+                        <div class="col-sm-8">
+                            @Html.DisplayFor(model => model.tp_pessoa)
+                        </div>
+                    </div>
 
-                <dd>
-                    @Html.DisplayFor(model => model.tp_pessoa)
-                </dd>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">CPF:</label>
+                        <div class="col-sm-8">
+                            @Html.DisplayFor(model => model.CPF)
+                        </div>
+                    </div>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.Status)
-                </dt>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">CNPJ:</label>
+                        <div class="col-sm-8">
+                            @Html.DisplayFor(model => model.CNPJ)
+                        </div>
+                    </div>
 
-                <dd>
-                    @Html.DisplayFor(model => model.Status)
-                </dd>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Telefone:</label>
+                        <div class="col-sm-8">
+                            @Html.DisplayFor(model => model.Telefone)
+                        </div>
+                    </div>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.CPF)
-                </dt>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Sexo:</label>
+                        <div class="col-sm-8">
+                            @Html.DisplayFor(model => model.Sexo)
+                        </div>
+                    </div>
 
-                <dd>
-                    @Html.DisplayFor(model => model.CPF)
-                </dd>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Data de Nascimento:</label>
+                        <div class="col-sm-8">
+                            @Html.DisplayFor(model => model.DtNascimento)
+                        </div>
+                    </div>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.CNPJ)
-                </dt>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Email:</label>
+                        <div class="col-sm-8">
+                            @Html.DisplayFor(model => model.Email)
+                        </div>
+                    </div>
 
-                <dd>
-                    @Html.DisplayFor(model => model.CNPJ)
-                </dd>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Status:</label>
+                        <div class="col-sm-8">
+                            @if (Model.StatusBool == false)
+                            {
+                                <span class="label label-danger">Desativado</span>
+                            }
+                            else
+                            {
+                                <span class="label label-success">Ativado</span>
+                            }
+                        </div>
+                    </div>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.Telefone)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Telefone)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Sexo)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Sexo)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.DtNascimento)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.DtNascimento)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Email)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Email)
-                </dd>
-            </dl>
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
-    </div>
-</div><!-- /.modal-content -->
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+        </div>
+    </div><!-- /.modal-content -->
 </div><!-- /.modal-dialog -->
-
-

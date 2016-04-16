@@ -5,8 +5,10 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.Linq.Dynamic;
 using System.Web.Mvc;
 using SincolPDV.Dominio;
+
 using SincolPDV.Repositorio.Compartilhado;
 using SincolPDV.Repositorio.Implementacao;
 
@@ -17,10 +19,25 @@ namespace SincolPDV.Aplicacao.Controllers
         private Contexto db = new Contexto();
         private ClienteRepositorio clienteRepositorio = new ClienteRepositorio();
 
-        // GET: Cliente
         public ActionResult Index()
         {
             return View(clienteRepositorio.ListarTodos());
+        }
+
+        public JsonResult PreencheGrid(pesquisa clie)
+        {
+            List<Cliente> cliente = clienteRepositorio.ListarTodos().ToList();
+
+            if (clie.Nome != null)
+                cliente = cliente.Where(x => x.Nome.Contains(clie.Nome)).ToList();
+
+            if (clie.Sexo != null)
+                cliente = cliente.Where(x => x.Sexo == clie.Sexo).ToList();
+
+            if (clie.Status != 0)
+                cliente = cliente.Where(x => x.Status.StatusId == clie.Status).ToList();
+
+            return Json(new { data = cliente }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
@@ -99,8 +116,8 @@ namespace SincolPDV.Aplicacao.Controllers
                     cliente.DtNascimento = clie.DtNascimento;
                     cliente.LimiteCredito = clie.LimiteCredito;
                     cliente.LimiteDias = clie.LimiteDias;
-                    cliente.Status = clie.Status;
                     cliente.DtAtualizacao = DateTime.Now;
+                    cliente.StatusId = clie.StatusBool ? 1 : 2;
 
                     clienteRepositorio.Atualizar(cliente);
                     clienteRepositorio.SalvarTodos();
