@@ -15,7 +15,7 @@
     <div class="modal-dialog" id="modal">
         <div class="modal-content">
             <div class="modal-header btn-success">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"></i><span class="sr-only">Close</span></button>
                 <h3 class="modal-title"><i class="glyphicon glyphicon-edit"></i> Cadastrar Cliente</h3>
             </div>
             <div class="modal-body">
@@ -25,7 +25,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label>Nome</label>
-                                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control", placeholder = "Nome Completo" } })
+                                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control required", placeholder = "Nome Completo" } })
                                 @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -174,9 +174,21 @@
                     </div>
                 </div>
 
+
+
                 <div class="modal-footer">
-                    <input type="button" value="Cadastrar" class="btn btn-success" onclick="Incluir('/Cliente/NovoCliente')" />
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    <div class="col-md-6">
+                        <div class="form-group has-error">
+                            <label class="control-label" id="mensagem" style="display:none"><i class="fa fa-times-circle-o"></i> Preencha todos os campos obrigatórios</label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-success" onclick="Incluir('/Cliente/NovoCliente')"><i class="fa fa-save"></i> Cadastrar</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-sign-out"></i> Fechar</button>
+                        </div>
+                    </div>
                 </div>
             </div><!-- /.modal-content -->
         </div>

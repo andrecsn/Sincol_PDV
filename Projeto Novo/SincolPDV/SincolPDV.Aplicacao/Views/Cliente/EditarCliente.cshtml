@@ -13,8 +13,8 @@
     <div class="modal-dialog" id="modal">
         <div class="modal-content">
             <div class="modal-header btn-success">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-                <h3 class="modal-title"><i class="glyphicon glyphicon-edit"></i> Editar Cliente</h3>
+                <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"></i><span class="sr-only">Close</span></button>
+                <h3 class="modal-title"><i class="fa fa-edit"></i> Editar Cliente</h3>
             </div>
             <div class="modal-body">
                 <div class="row">
@@ -25,7 +25,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label>Nome</label>
-                                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control", placeholder = "Nome Completo" } })
+                                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control required", placeholder = "Nome Completo" } })
                                 @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -174,8 +174,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <input type="button" value="Salvar Alteração" class="btn btn-success" onclick="Editar('/Cliente/EditarCliente')" />
-                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-success" onclick="Incluir('/Cliente/EditarCliente')"><i class="fa fa-save"></i> Salvar Alteração</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-sign-out"></i> Fechar</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
@@ -212,7 +212,6 @@
 
          //===========================================================================================================================
 
-        //Initialize Select2 Elements
         $(".select2").select2();
 
         //Datemask dd/mm/yyyy

@@ -62,10 +62,10 @@
                     <hr>
 
                     <div class="form-group">
+                        <label class="col-sm-1 control-label">&nbsp;</label>
                         <div class="col-md-5">
                             <button id="btnPesquisa" class="btn btn-md btn-primary pesquisa">Pesquisar <i class="fa fa-arrow-circle-right"></i></button>
-
-                            <button id="btnCadastrar" class="btn btn-md btn-success cadastrar">Novo Cliente <i class="fa fa-arrow-circle-right"></i></button>
+                            <button id="btnCadastrar" class="btn btn-md btn-success pull-right cadastrar"><i class="fa fa-plus"></i> Novo Cliente </button>
                         </div>
                     </div>
 
@@ -147,43 +147,69 @@
             });
 
         });
-        
+
         //Incluir Cliente
         function Incluir(caminho) {
-            var dadosSerializados = $('#formDados').serialize();
-            $.ajax({
-                type: "POST",
-                url: caminho,
-                data: dadosSerializados,
-                success: function () {
-                    $("#modal").modal('hide');
-                    MensagemSucesso('Cliente incluirod com Sucesso!');
-                    GeraDataTableCliente();
-                },
-                error: function () {
-                    $("#modal").modal('hide');
-                    MensagemErro('Ocorreu um Erro ao Incluir!');
+
+            var cont = 0;
+            $("#formDados .required").each(function () {
+                if($(this).val() == "")
+                {
+                    $(this).css({"border" : "1px solid #F00"});
+                    cont++;
                 }
             });
+
+            if (cont == 0) {
+                var dadosSerializados = $('#formDados').serialize();
+                $.ajax({
+                    type: "POST",
+                    url: caminho,
+                    data: dadosSerializados,
+                    success: function () {
+                        $("#modal").modal('hide');
+                        MensagemSucesso('Cliente incluirod com Sucesso!');
+                        GeraDataTableCliente();
+                    },
+                    error: function () {
+                        $("#modal").modal('hide');
+                        MensagemErro('Ocorreu um Erro ao Incluir!');
+                    }
+                });
+            } else {
+                $('#formDados #mensagem').css("display", "block");
+            }
         }
 
         //Editando Cliente
         function Editar(caminho) {
-            var dadosSerializados = $('#formDados').serialize();
-            $.ajax({
-                type: "POST",
-                url: caminho,
-                data: dadosSerializados,
-                success: function () {
-                    $("#modal").modal('hide');
-                    MensagemSucesso('Item editado com Sucesso!');
-                    GeraDataTableCliente();
-                },
-                error: function () {
-                    $("#modal").modal('hide');
-                    MensagemErro('Ocorreu um Erro ao Editar!');
+
+            var cont = 0;
+            $("#formDados .required").each(function () {
+                if($(this).val() == "")
+                {
+                    $(this).css({"border" : "1px solid #F00"});
+                    cont++;
                 }
             });
+
+            if (cont == 0) {
+                var dadosSerializados = $('#formDados').serialize();
+                $.ajax({
+                    type: "POST",
+                    url: caminho,
+                    data: dadosSerializados,
+                    success: function () {
+                        $("#modal").modal('hide');
+                        MensagemSucesso('Item editado com Sucesso!');
+                        GeraDataTableCliente();
+                    },
+                    error: function () {
+                        $("#modal").modal('hide');
+                        MensagemErro('Ocorreu um Erro ao Editar!');
+                    }
+                });
+            }
         }
 
         //Deletando Cliente
