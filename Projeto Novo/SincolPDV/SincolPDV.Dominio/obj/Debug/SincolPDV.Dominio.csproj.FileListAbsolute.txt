@@ -1,6 +1,6 @@
 C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Dominio\bin\Debug\SincolPDV.Dominio.dll.config
 C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Dominio\bin\Debug\SincolPDV.Dominio.dll
 C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Dominio\bin\Debug\SincolPDV.Dominio.pdb
-C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Dominio\obj\Debug\SincolPDV.Dominio.csprojResolveAssemblyReference.cache
 C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Dominio\obj\Debug\SincolPDV.Dominio.dll
 C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Dominio\obj\Debug\SincolPDV.Dominio.pdb
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Dominio\obj\Debug\SincolPDV.Dominio.csprojResolveAssemblyReference.cache

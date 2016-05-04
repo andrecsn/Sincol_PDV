@@ -41,6 +41,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Compartilhado\Contexto.cs" />
     <Compile Include="Compartilhado\ModelDbInitializer.cs" />
+    <Compile Include="Compartilhado\Seguranca.cs" />
     <Compile Include="Implementacao\Base\IRepositorio.cs" />
     <Compile Include="Implementacao\Base\Repositorio.cs" />
     <Compile Include="Implementacao\ClienteRepositorio.cs" />

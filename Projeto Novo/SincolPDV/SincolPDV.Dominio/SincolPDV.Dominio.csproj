@@ -48,6 +48,7 @@
     <Compile Include="EntradaProduto.cs" />
     <Compile Include="Fabricante.cs" />
     <Compile Include="Fornecedor.cs" />
+    <Compile Include="FuncaoUsuario.cs" />
     <Compile Include="Inventario.cs" />
     <Compile Include="InventarioProduto.cs" />
     <Compile Include="PerfilAcesso.cs" />

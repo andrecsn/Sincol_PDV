@@ -162,6 +162,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -193,6 +194,7 @@
     <Content Include="Images\photo2.png" />
     <Content Include="Images\photo3.jpg" />
     <Content Include="Images\photo4.jpg" />
+    <Content Include="Images\sincol_logo.jpg" />
     <Content Include="Images\user1-128x128.jpg" />
     <Content Include="Images\user2-160x160.jpg" />
     <Content Include="Images\user3-128x128.jpg" />
@@ -250,6 +252,7 @@
     <Content Include="Plugins\css\line\red.css" />
     <Content Include="Plugins\css\line\yellow.css" />
     <Content Include="Plugins\css\line\_all.css" />
+    <Content Include="Plugins\css\login\normalize.css" />
     <Content Include="Plugins\css\minimal\aero%402x.png" />
     <Content Include="Plugins\css\minimal\aero.css" />
     <Content Include="Plugins\css\minimal\aero.png" />
@@ -373,6 +376,10 @@
     <Content Include="Views\Cliente\DetalhesCliente.cshtml" />
     <Content Include="Views\Cliente\EditarCliente.cshtml" />
     <Content Include="Views\Cliente\Index.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
+    <Content Include="Views\Usuario\Create.cshtml" />
+    <Content Include="Views\Usuario\Delete.cshtml" />
+    <Content Include="Views\Usuario\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
