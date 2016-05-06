@@ -14,9 +14,22 @@ namespace SincolPDV.Aplicacao.Controllers
     public class UsuarioController : Controller
     {
         private UsuarioRepositorio usuarioRepositorio = new UsuarioRepositorio();
+        private FuncaoUsuarioRepositorio funcaoUsuarioRepositorio = new FuncaoUsuarioRepositorio();
+        private StatusRepositorio statusRepositorio = new StatusRepositorio();
 
         // GET: Usuario
         public ActionResult Index()
+        {
+            if (UsuarioRepositorio.UsuarioLogado == null)
+                return Redirect("/Usuario/Login");
+
+            ViewBag.FuncaoUsuario = funcaoUsuarioRepositorio.ListarTodos().ToList();
+            ViewBag.Status = statusRepositorio.ListarTodos().ToList();
+
+            return View();
+        }
+
+        public ActionResult Login()
         {
             return View();
         }
@@ -37,6 +50,13 @@ namespace SincolPDV.Aplicacao.Controllers
                 response = false;
                 return Json(response, JsonRequestBehavior.AllowGet);
             }
+        }
+
+        public ActionResult Deslogar()
+        {
+            usuarioRepositorio.Deslogar();
+
+            return Redirect("/Usuario/Login");
         }
 
         //// GET: Usuario/Details/5

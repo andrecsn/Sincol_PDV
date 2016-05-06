@@ -13,9 +13,15 @@ namespace SincolPDV.Repositorio.Implementacao
     {
         static Contexto contexto = new Contexto();
 
-        public static void Deslogar()
+        public void Deslogar()
         {
-            FormsAuthentication.SignOut();
+            HttpCookie Usuario = new HttpCookie("CookieAutenticacao")
+            {
+                Expires = DateTime.Now.AddDays(-1),
+                Value = null
+            };
+
+            HttpContext.Current.Response.SetCookie(Usuario);
         }
 
 
@@ -25,7 +31,8 @@ namespace SincolPDV.Repositorio.Implementacao
             get
 
             {
-                var Usuario = HttpContext.Current.Request.Cookies["UserCookieAuthentication"];
+                var Usuario = HttpContext.Current.Request.Cookies["CookieAutenticacao"];
+
                 if (Usuario == null)
                 {
                     return null;
@@ -79,13 +86,13 @@ namespace SincolPDV.Repositorio.Implementacao
                 else
                 {
                     //Criando um objeto cookie
-                    HttpCookie UserCookie = new HttpCookie("UserCookieAuthentication");
+                    HttpCookie UserCookie = new HttpCookie("CookieAutenticacao");
 
                     //Setando o ID do usuário no cookie
                     UserCookie.Value = Seguranca.Criptografar(consulta.UsuarioID.ToString());
 
                     //Definindo o prazo de vida do cookie
-                    UserCookie.Expires = DateTime.Now.AddDays(1);
+                    UserCookie.Expires = DateTime.Now.AddHours(12);
 
                     //Adicionando o cookie no contexto da aplicação
                     HttpContext.Current.Response.Cookies.Add(UserCookie);

@@ -26,7 +26,6 @@
                             <div class="form-group">
                                 <label>Nome</label>
                                 @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control required", placeholder = "Nome Completo" } })
-                                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
                             </div>
                         </div>
 
@@ -78,7 +77,6 @@
                             <div class="form-group">
                                 <label>CPF</label>
                                 <input type="text" name="CPF" id="CPF" value="@Model.CPF" class="form-control" data-inputmask='"mask": "999.999.999-99"' data-mask>
-                                @Html.ValidationMessageFor(model => model.CPF, "", new { @class = "text-danger" })
                             </div>
                         </div>
 
@@ -86,7 +84,6 @@
                             <div class="form-group">
                                 <label>CNPJ</label>
                                 <input type="text" name="CNPJ" id="CNPJ" value="@Model.CNPJ" class="form-control" data-inputmask='"mask": "999.999.999-99"' data-mask>
-                                @Html.ValidationMessageFor(model => model.CNPJ, "", new { @class = "text-danger" })
                             </div>
                         </div>
 
@@ -94,7 +91,6 @@
                             <div class="form-group">
                                 <label>Telefone</label>
                                 <input type="text" name="Telefone" id="Telefone" value="@Model.Telefone" class="form-control" data-inputmask='"mask": "(99) 99999-9999"' data-mask>
-                                @Html.ValidationMessageFor(model => model.Telefone, "", new { @class = "text-danger" })
                             </div>
                         </div>
 
@@ -104,7 +100,6 @@
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
                                     @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </div>
@@ -114,7 +109,6 @@
                             <div class="input-group">
                                 <span class="input-group-addon">$</span>
                                 @Html.EditorFor(model => model.LimiteCredito, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.LimiteCredito, "", new { @class = "text-danger" })
                                 <span class="input-group-addon">.00</span>
                             </div>
                         </div>
@@ -123,7 +117,6 @@
                             <div class="form-group">
                                 <label>Endereço</label>
                                 @Html.EditorFor(model => model.Endereco, new { htmlAttributes = new { @class = "form-control", placeholder = "Endereço completo" } })
-                                @Html.ValidationMessageFor(model => model.Endereco, "", new { @class = "text-danger" })
                             </div>
                         </div>
 
@@ -166,7 +159,6 @@
                             <div class="form-group">
                                 <label>Observação</label>
                                 @Html.TextAreaFor(model => model.Observacao, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.Observacao, "", new { @class = "text-danger" })
                             </div>
                         </div>
 

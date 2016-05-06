@@ -18,10 +18,16 @@ namespace SincolPDV.Aplicacao.Controllers
     {
         private Contexto db = new Contexto();
         private ClienteRepositorio clienteRepositorio = new ClienteRepositorio();
+        private StatusRepositorio statusRepositorio = new StatusRepositorio();
 
         public ActionResult Index()
         {
-            return View(clienteRepositorio.ListarTodos());
+            if (UsuarioRepositorio.UsuarioLogado == null)
+                return Redirect("/Usuario/Login");
+
+            ViewBag.Status = statusRepositorio.ListarTodos().ToList();
+
+            return View();
         }
 
         public JsonResult PreencheGrid(pesquisa clie)
@@ -34,8 +40,8 @@ namespace SincolPDV.Aplicacao.Controllers
             if (clie.Sexo != null)
                 cliente = cliente.Where(x => x.Sexo == clie.Sexo).ToList();
 
-            if (clie.Status != 0)
-                cliente = cliente.Where(x => x.Status.StatusId == clie.Status).ToList();
+            if (clie.StatusId != 0)
+                cliente = cliente.Where(x => x.Status.StatusId == clie.StatusId).ToList();
 
             return Json(new { data = cliente }, JsonRequestBehavior.AllowGet);
         }
@@ -55,13 +61,11 @@ namespace SincolPDV.Aplicacao.Controllers
             return View(cliente);
         }
 
-        // GET: Cliente/Create
         public ActionResult NovoCliente()
         {
             return View();
         }
 
-        // POST: Cliente/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult NovoCliente(Cliente cliente)
@@ -80,7 +84,6 @@ namespace SincolPDV.Aplicacao.Controllers
             return View(cliente);
         }
 
-        // GET: Cliente/Edit/5
         public ActionResult EditarCliente(int? id)
         {
             if (id == null)
@@ -95,7 +98,6 @@ namespace SincolPDV.Aplicacao.Controllers
             return View(cliente);
         }
 
-        // POST: Cliente/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public void EditarCliente(Cliente clie)
@@ -130,7 +132,6 @@ namespace SincolPDV.Aplicacao.Controllers
             }
         }
 
-        // GET: Cliente/Delete/5
         public ActionResult DeletarCliente(int? id)
         {
             if (id == null)
@@ -145,7 +146,6 @@ namespace SincolPDV.Aplicacao.Controllers
             return View(cliente);
         }
 
-        // POST: Cliente/Delete/5
         [HttpPost, ActionName("DeletarCliente")]
         [ValidateAntiForgeryToken]
         public void DeleteConfirmed(Cliente clie)

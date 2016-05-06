@@ -61,13 +61,24 @@
     <Compile Include="Implementacao\EntradaRepositorio.cs" />
     <Compile Include="Implementacao\FabricanteRepositorio.cs" />
     <Compile Include="Implementacao\FornecedorRepositorio.cs" />
+    <Compile Include="Implementacao\FuncaoUsuarioRepositorio.cs" />
     <Compile Include="Implementacao\InventarioRepositorio.cs" />
     <Compile Include="Implementacao\PerfilAcessoRepositorio.cs" />
     <Compile Include="Implementacao\PerfilTransacaoRepositorio.cs" />
     <Compile Include="Implementacao\ProdutoRepositorio.cs" />
     <Compile Include="Implementacao\SaidaRepositorio.cs" />
+    <Compile Include="Implementacao\StatusRepositorio.cs" />
     <Compile Include="Implementacao\TransferenciaRepositorio.cs" />
     <Compile Include="Implementacao\UsuarioRepositorio.cs" />
+    <Compile Include="Migrations\201605052146266_InitialCreate.cs" />
+    <Compile Include="Migrations\201605052146266_InitialCreate.Designer.cs">
+      <DependentUpon>201605052146266_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605061317475_AlteraçãoUsuario.cs" />
+    <Compile Include="Migrations\201605061317475_AlteraçãoUsuario.Designer.cs">
+      <DependentUpon>201605061317475_AlteraçãoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -88,6 +99,14 @@
       <Project>{25d7840d-2f9c-4087-8eb3-27d2db579086}</Project>
       <Name>SincolPDV.Dominio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201605052146266_InitialCreate.resx">
+      <DependentUpon>201605052146266_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605061317475_AlteraçãoUsuario.resx">
+      <DependentUpon>201605061317475_AlteraçãoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -59,6 +59,6 @@ namespace SincolPDV.Dominio
     {
         public string Nome { get; set; }
         public string Sexo { get; set; }
-        public int Status { get; set; }
+        public int StatusId { get; set; }
     }
 }

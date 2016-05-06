@@ -10,5 +10,6 @@ namespace SincolPDV.Dominio
     {
         public int PerfilAcessoID { get; set; }
         public string Descricao { get; set; }
+        public virtual PerfilTransacao PerfilTransacao { get; set; }
     }
 }

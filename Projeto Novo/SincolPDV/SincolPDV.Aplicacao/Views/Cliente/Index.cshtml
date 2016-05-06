@@ -1,12 +1,9 @@
-﻿@model IEnumerable<SincolPDV.Dominio.Cliente>
+﻿@model SincolPDV.Dominio.Cliente
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Cliente";
     Layout = "~/Views/Shared/_Layout2.cshtml";
 }
-
-
-
 
 <section class="content-header">
     <h1>
@@ -51,11 +48,9 @@
                     <div class="form-group">
                         <label class="col-sm-1 control-label">Status</label>
                         <div class="col-sm-5">
-                            <select id="Status" name="Status" class="form-control">
-                                <option value=0>-- Selecione --</option>
-                                <option value=1> Ativado </option>
-                                <option value=2> Desativado </option>
-                            </select>
+                           @Html.DropDownListFor(model => model.StatusId,
+                                new SelectList(ViewBag.Status, "StatusId", "Descricao"),
+                                new { @class = "form-control" })
                         </div>
                     </div>
 
@@ -168,7 +163,7 @@
                     data: dadosSerializados,
                     success: function () {
                         $("#modal").modal('hide');
-                        MensagemSucesso('Cliente incluirod com Sucesso!');
+                        MensagemSucesso('Cliente incluido com Sucesso!');
                         GeraDataTableCliente();
                     },
                     error: function () {
