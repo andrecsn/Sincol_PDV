@@ -45,4 +45,12 @@ namespace SincolPDV.Dominio
             set { StatusId = value ? 1 : 2; }
         }
     }
+
+    public class pesquisaUsuario
+    {
+        public string Nome { get; set; }
+        public int FuncaoUsuarioID { get; set; }
+        public int PerfilAcessoID { get; set; }
+        public int StatusId { get; set; }
+    }
 }

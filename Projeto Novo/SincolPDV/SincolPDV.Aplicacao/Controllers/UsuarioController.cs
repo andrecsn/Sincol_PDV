@@ -15,6 +15,7 @@ namespace SincolPDV.Aplicacao.Controllers
     {
         private UsuarioRepositorio usuarioRepositorio = new UsuarioRepositorio();
         private FuncaoUsuarioRepositorio funcaoUsuarioRepositorio = new FuncaoUsuarioRepositorio();
+        private PerfilAcessoRepositorio perfilAcessoRepositorio = new PerfilAcessoRepositorio();
         private StatusRepositorio statusRepositorio = new StatusRepositorio();
 
         // GET: Usuario
@@ -23,10 +24,38 @@ namespace SincolPDV.Aplicacao.Controllers
             if (UsuarioRepositorio.UsuarioLogado == null)
                 return Redirect("/Usuario/Login");
 
-            ViewBag.FuncaoUsuario = funcaoUsuarioRepositorio.ListarTodos().ToList();
-            ViewBag.Status = statusRepositorio.ListarTodos().ToList();
+            var FuncaoUsuario = funcaoUsuarioRepositorio.ListarTodos().ToList();
+            var PerfilAcesso = perfilAcessoRepositorio.ListarTodos().ToList();
+            var Status = statusRepositorio.ListarTodos().ToList();
+
+            FuncaoUsuario.Add(new FuncaoUsuario { FuncaoUsuarioID = 0, Descricao = "<-- Selecione -->" });
+            PerfilAcesso.Add(new PerfilAcesso { PerfilAcessoID = 0, Descricao = "<-- Selecione -->" });
+            Status.Add(new Status { StatusId = 0, Descricao = "<-- Selecione -->" });
+
+            ViewBag.FuncaoUsuario = FuncaoUsuario.OrderBy(x => x.FuncaoUsuarioID);
+            ViewBag.PerfilAcesso = PerfilAcesso.OrderBy(x => x.PerfilAcessoID);
+            ViewBag.Status = Status.OrderBy(x => x.StatusId);
 
             return View();
+        }
+
+        public JsonResult PreencheGrid(pesquisaUsuario usu)
+        {
+            List<Usuario> usuario = usuarioRepositorio.ListarTodos().ToList();
+
+            if (usu.Nome != null)
+                usuario = usuario.Where(x => x.Nome.Contains(usu.Nome)).ToList();
+
+            if (usu.FuncaoUsuarioID != 0)
+                usuario = usuario.Where(x => x.FuncaoUsuarioID == usu.FuncaoUsuarioID).ToList();
+
+            if (usu.PerfilAcessoID != 0)
+                usuario = usuario.Where(x => x.PerfilAcessoID == usu.PerfilAcessoID).ToList();
+
+            if (usu.StatusId != 0)
+                usuario = usuario.Where(x => x.Status.StatusId == usu.StatusId).ToList();
+
+            return Json(new { data = usuario }, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult Login()
@@ -59,100 +88,138 @@ namespace SincolPDV.Aplicacao.Controllers
             return Redirect("/Usuario/Login");
         }
 
-        //// GET: Usuario/Details/5
-        //public ActionResult Details(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    Usuario usuario = db.Usuario.Find(id);
-        //    if (usuario == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(usuario);
-        //}
+        [HttpGet]
+        public ActionResult DetalhesUsuario(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Usuario usuario = usuarioRepositorio.Listar(x => x.UsuarioID == id).FirstOrDefault();
+            if (usuario == null)
+            {
+                return HttpNotFound();
+            }
+            return View(usuario);
+        }
 
-        //// GET: Usuario/Create
-        //public ActionResult Create()
-        //{
-        //    return View();
-        //}
+        public ActionResult NovoUsuario()
+        {
+            var FuncaoUsuario = funcaoUsuarioRepositorio.ListarTodos().ToList();
+            var PerfilAcesso = perfilAcessoRepositorio.ListarTodos().ToList();
 
-        //// POST: Usuario/Create
-        //// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        //// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Create([Bind(Include = "UsuarioID,Login,Nome,Senha,Status")] Usuario usuario)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        db.Usuario.Add(usuario);
-        //        db.SaveChanges();
-        //        return RedirectToAction("Index");
-        //    }
+            FuncaoUsuario.Add(new FuncaoUsuario { FuncaoUsuarioID = 0, Descricao = "<-- Selecione -->" });
+            PerfilAcesso.Add(new PerfilAcesso { PerfilAcessoID = 0, Descricao = "<-- Selecione -->" });
 
-        //    return View(usuario);
-        //}
+            ViewBag.FuncaoUsuario = FuncaoUsuario.OrderBy(x => x.FuncaoUsuarioID);
+            ViewBag.PerfilAcesso = PerfilAcesso.OrderBy(x => x.PerfilAcessoID);
 
-        //// GET: Usuario/Edit/5
-        //public ActionResult Edit(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    Usuario usuario = db.Usuario.Find(id);
-        //    if (usuario == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(usuario);
-        //}
+            return View();
+        }
 
-        //// POST: Usuario/Edit/5
-        //// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        //// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Edit([Bind(Include = "UsuarioID,Login,Nome,Senha,Status")] Usuario usuario)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        db.Entry(usuario).State = EntityState.Modified;
-        //        db.SaveChanges();
-        //        return RedirectToAction("Index");
-        //    }
-        //    return View(usuario);
-        //}
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult NovoUsuario(Usuario usuario)
+        {
+            if (ModelState.IsValid)
+            {
+                usuario.DataCadastro = DateTime.Now;
 
-        //// GET: Usuario/Delete/5
-        //public ActionResult Delete(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    Usuario usuario = db.Usuario.Find(id);
-        //    if (usuario == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(usuario);
-        //}
+                usuarioRepositorio.Adicionar(usuario);
+                usuarioRepositorio.SalvarTodos();
 
-        //// POST: Usuario/Delete/5
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult DeleteConfirmed(int id)
-        //{
-        //    Usuario usuario = db.Usuario.Find(id);
-        //    db.Usuario.Remove(usuario);
-        //    db.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
+                return RedirectToAction("Index");
+            }
+
+            return View(usuario);
+        }
+
+        public ActionResult EditarUsuario(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Usuario usuario = usuarioRepositorio.Listar(x => x.UsuarioID == id).FirstOrDefault();
+            if (usuario == null)
+            {
+                return HttpNotFound();
+            }
+
+            var FuncaoUsuario = funcaoUsuarioRepositorio.ListarTodos().ToList();
+            var PerfilAcesso = perfilAcessoRepositorio.ListarTodos().ToList();
+            var Status = statusRepositorio.ListarTodos().ToList();
+
+            FuncaoUsuario.Add(new FuncaoUsuario { FuncaoUsuarioID = 0, Descricao = "<-- Selecione -->" });
+            PerfilAcesso.Add(new PerfilAcesso { PerfilAcessoID = 0, Descricao = "<-- Selecione -->" });
+            Status.Add(new Status { StatusId = 0, Descricao = "<-- Selecione -->" });
+
+            ViewBag.FuncaoUsuario = FuncaoUsuario.OrderBy(x => x.FuncaoUsuarioID);
+            ViewBag.PerfilAcesso = PerfilAcesso.OrderBy(x => x.PerfilAcessoID);
+            ViewBag.Status = Status.OrderBy(x => x.StatusId);
+
+            return View(usuario);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public void EditarUsuario(Usuario usu)
+        {
+            Usuario usuario = usuarioRepositorio.Listar(x => x.UsuarioID == usu.UsuarioID).FirstOrDefault();
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    usuario.Nome = usu.Nome;
+                    usuario.Email = usu.Email;
+                    usuario.Telefone = usu.Telefone;
+                    usuario.FuncaoUsuarioID = usu.FuncaoUsuarioID;
+                    usuario.PerfilAcessoID = usu.PerfilAcessoID;
+                    usuario.Login = usu.Login;
+                    usuario.Senha = usu.Senha;
+                    usuario.StatusId = usu.StatusBool ? 1 : 2;
+
+                    usuarioRepositorio.Atualizar(usuario);
+                    usuarioRepositorio.SalvarTodos();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public ActionResult DeletarUsuario(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Usuario usuario = usuarioRepositorio.Listar(x => x.UsuarioID == id).FirstOrDefault();
+            if (usuario == null)
+            {
+                return HttpNotFound();
+            }
+            return View(usuario);
+        }
+
+        [HttpPost, ActionName("DeletarUsuario")]
+        [ValidateAntiForgeryToken]
+        public void DeleteConfirmed(Usuario usu)
+        {
+            try
+            {
+                Usuario usuario = usuarioRepositorio.Listar(x => x.UsuarioID == usu.UsuarioID).FirstOrDefault();
+
+                usuarioRepositorio.Excluir(x => x == usuario);
+                usuarioRepositorio.SalvarTodos();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
         //protected override void Dispose(bool disposing)
         //{
@@ -162,5 +229,6 @@ namespace SincolPDV.Aplicacao.Controllers
         //    }
         //    base.Dispose(disposing);
         //}
+
     }
 }

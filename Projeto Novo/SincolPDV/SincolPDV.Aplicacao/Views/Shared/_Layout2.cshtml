@@ -14,7 +14,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     @Styles.Render("~/Content/css")
     @Styles.Render("~/Plugins/css/datatables")
-    @Styles.Render("~/Plugins/css")
     @Styles.Render("~/Plugins/css/toast")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -162,7 +161,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <img src="~/Images/user2-160x160.jpg" class="img-circle" alt="User Image">
                                     <p>
                                         @UsuarioRepositorio.UsuarioLogado.Nome - @UsuarioRepositorio.UsuarioLogado.PerfilAcesso.Descricao
-                                        @UsuarioRepositorio.UsuarioLogado.Funcao.Funcao
+                                        @UsuarioRepositorio.UsuarioLogado.Funcao.Descricao
                                         @*<small>Data de cadastro - @UsuarioRepositorio.UsuarioLogado.DataCadastro</small>*@
                                     </p>
                                     <p>&nbsp;</p>
@@ -212,7 +211,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </div>
                 </form>
                 <!-- /.search form -->
-                <!-- Sidebar Menu -->
+
+                <!-- Menu do Sistema -->
                 <ul class="sidebar-menu">
                     <li class="header">OPÇÕES</li>
                     <!-- Optionally, you can add icons to the links -->
@@ -220,7 +220,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <li class="treeview">
                         <a href="#"><i class="fa fa-plus-circle"></i> <span>Cadastro</span> <i class="fa fa-angle-left pull-right"></i></a>
                         <ul class="treeview-menu">
-                            <li><a href="Cliente/NovoCliente">Cliente</a></li>
+                            <li><a href="/Cliente/Index">Cliente</a></li>
                             <li><a href="#">Produto</a></li>
                             <li><a href="#">Fornecedor</a></li>
                             <li><a href="#">Produto</a></li>

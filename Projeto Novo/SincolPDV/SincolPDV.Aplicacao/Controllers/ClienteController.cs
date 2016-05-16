@@ -25,12 +25,15 @@ namespace SincolPDV.Aplicacao.Controllers
             if (UsuarioRepositorio.UsuarioLogado == null)
                 return Redirect("/Usuario/Login");
 
-            ViewBag.Status = statusRepositorio.ListarTodos().ToList();
+            var Status = statusRepositorio.ListarTodos().ToList();
+            Status.Add(new Status { StatusId = 0, Descricao = "<-- Selecione -->" });
+
+            ViewBag.Status = Status.OrderBy(x => x.StatusId);
 
             return View();
         }
 
-        public JsonResult PreencheGrid(pesquisa clie)
+        public JsonResult PreencheGrid(pesquisaCliente clie)
         {
             List<Cliente> cliente = clienteRepositorio.ListarTodos().ToList();
 

@@ -13,3 +13,4 @@ C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.
 C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\obj\Debug\SincolPDV.Repositorio.Migrations.InitialCreate.resources
 C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\obj\Debug\SincolPDV.Repositorio.csproj.GenerateResource.Cache
 C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\obj\Debug\SincolPDV.Repositorio.Migrations.AlteraçãoUsuario.resources
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\obj\Debug\SincolPDV.Repositorio.Migrations.AlteraçãoFuncao.resources

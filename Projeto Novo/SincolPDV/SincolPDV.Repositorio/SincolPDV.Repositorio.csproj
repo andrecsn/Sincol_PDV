@@ -78,6 +78,10 @@
     <Compile Include="Migrations\201605061317475_AlteraçãoUsuario.Designer.cs">
       <DependentUpon>201605061317475_AlteraçãoUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605111328092_AlteraçãoFuncao.cs" />
+    <Compile Include="Migrations\201605111328092_AlteraçãoFuncao.Designer.cs">
+      <DependentUpon>201605111328092_AlteraçãoFuncao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -106,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605061317475_AlteraçãoUsuario.resx">
       <DependentUpon>201605061317475_AlteraçãoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605111328092_AlteraçãoFuncao.resx">
+      <DependentUpon>201605111328092_AlteraçãoFuncao.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

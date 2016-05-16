@@ -76,7 +76,7 @@ namespace SincolPDV.Repositorio.Implementacao
             try
             {
                 var consulta = (from u in contexto.Usuario
-                                        where u.Login == _Username && u.Senha == _Password
+                                        where u.Login == _Username && u.Senha == _Password && u.StatusId == 1
                                         select u).SingleOrDefault();
 
                 if (consulta == null)
@@ -100,7 +100,7 @@ namespace SincolPDV.Repositorio.Implementacao
                     return true;
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 return false;
             }

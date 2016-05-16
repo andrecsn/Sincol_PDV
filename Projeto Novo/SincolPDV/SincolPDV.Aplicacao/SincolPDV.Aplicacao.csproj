@@ -354,6 +354,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Plugins\_Compartilhado.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Plugins\_Uteis.js" />
     <Content Include="Web.config" />
@@ -377,9 +378,9 @@
     <Content Include="Views\Cliente\EditarCliente.cshtml" />
     <Content Include="Views\Cliente\Index.cshtml" />
     <Content Include="Views\Usuario\Login.cshtml" />
-    <Content Include="Views\Usuario\Create.cshtml" />
-    <Content Include="Views\Usuario\Delete.cshtml" />
-    <Content Include="Views\Usuario\Edit.cshtml" />
+    <Content Include="Views\Usuario\NovoUsuario.cshtml" />
+    <Content Include="Views\Usuario\DeletarUsuario.cshtml" />
+    <Content Include="Views\Usuario\EditarUsuario.cshtml" />
     <Content Include="Views\Usuario\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>

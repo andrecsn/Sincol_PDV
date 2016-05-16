@@ -30,6 +30,9 @@ namespace SincolPDV.Aplicacao
             bundles.Add(new ScriptBundle("~/Plugins/js/uteis").Include(
                       "~/Plugins/_uteis.js"));
 
+            bundles.Add(new ScriptBundle("~/Plugins/js/compartilhado").Include(
+                      "~/Plugins/_Compartilhado.js"));
+
             bundles.Add(new StyleBundle("~/Plugins/css/toast").Include(
                       "~/Plugins/css/toast/jquery.toast.css"));
 
@@ -49,15 +52,17 @@ namespace SincolPDV.Aplicacao
                       "~/Plugins/js/datatables/jquery.dataTables.min.js",
                       "~/Plugins/js/datatables/dataTables.bootstrap.min.js"));
 
-            bundles.Add(new StyleBundle("~/Plugins/css").Include(
-                      "~/Plugins/css/all.css",
-                      "~/Plugins/css/select2.min.css"));
+            //bundles.Add(new StyleBundle("~/Plugins/css").Include(
+            //          "~/Plugins/css/all.css",
+            //          "~/Plugins/css/select2.min.css"));
 
             bundles.Add(new StyleBundle("~/Plugins/css/datatables").Include(
                       "~/Plugins/css/datatables/dataTables.bootstrap.css"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.min.css",
+                      "~/Plugins/css/all.css",
+                      "~/Plugins/css/select2.min.css",
                       "~/Content/AdminLTE.min.css",
                       "~/Content/_all-skins.min.css"));
         }

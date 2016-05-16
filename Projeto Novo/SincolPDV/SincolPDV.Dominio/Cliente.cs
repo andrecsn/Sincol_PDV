@@ -55,7 +55,7 @@ namespace SincolPDV.Dominio
     }
 
 
-    public class pesquisa
+    public class pesquisaCliente
     {
         public string Nome { get; set; }
         public string Sexo { get; set; }

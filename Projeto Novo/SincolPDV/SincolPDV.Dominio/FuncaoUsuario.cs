@@ -9,6 +9,6 @@ namespace SincolPDV.Dominio
     public class FuncaoUsuario
     {
         public int FuncaoUsuarioID { get; set; }
-        public string Funcao { get; set; }
+        public string Descricao { get; set; }
     }
 }
