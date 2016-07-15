@@ -1,0 +1,76 @@
+﻿@model SincolPDV.Dominio.Usuario
+
+@{
+    ViewBag.Title = "Detalhes do usuario";
+    Layout = null;
+}
+
+
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header  bg-primary">
+            <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"></i><span class="sr-only">Close</span></button>
+            <h3 class="modal-title"><i class="fa fa-sticky-note"></i> Detalhes do usuário</h3>
+        </div>
+        <div class="modal-body">
+
+            <form class="form-horizontal">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Nome: </label>
+                        <div class="col-sm-8">
+                            @Html.DisplayFor(model => model.Nome)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Telefone:</label>
+                        <div class="col-sm-8">
+                            @Html.DisplayFor(model => model.Telefone)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Email:</label>
+                        <div class="col-sm-8">
+                            @Html.DisplayFor(model => model.Email)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Função:</label>
+                        <div class="col-sm-8">
+                            @Html.DisplayFor(model => model.Funcao.Descricao)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Perfil de Acesso:</label>
+                        <div class="col-sm-8">
+                            @Html.DisplayFor(model => model.PerfilAcesso.Descricao)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Status:</label>
+                        <div class="col-sm-8">
+                            @if (Model.StatusBool == false)
+                            {
+                                <span class="label label-danger">Desativado</span>
+                            }
+                            else
+                            {
+                                <span class="label label-success">Ativado</span>
+                            }
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-sign-out"></i> Fechar</button>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->

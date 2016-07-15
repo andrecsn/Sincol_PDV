@@ -18,15 +18,35 @@ namespace SincolPDV.Aplicacao.Controllers
     {
         private Contexto db = new Contexto();
         private ClienteRepositorio clienteRepositorio = new ClienteRepositorio();
+        private StatusRepositorio statusRepositorio = new StatusRepositorio();
+
+        private static int UsuarioPai()
+        {
+            Usuario usuario = UsuarioRepositorio.UsuarioLogado;
+
+            if (usuario != null)
+                return usuario.UsuarioPaiID == null ? usuario.UsuarioID : Convert.ToInt32(usuario.UsuarioPaiID);
+            else
+                return 0;
+        }
+        int usuarioPai = UsuarioPai();
 
         public ActionResult Index()
         {
-            return View(clienteRepositorio.ListarTodos());
+            if (UsuarioRepositorio.UsuarioLogado == null)
+                return Redirect("/Usuario/Login");
+
+            var Status = statusRepositorio.ListarTodos().ToList();
+            Status.Add(new Status { StatusId = 0, Descricao = "<-- Selecione -->" });
+
+            ViewBag.Status = Status.OrderBy(x => x.StatusId);
+
+            return View();
         }
 
-        public JsonResult PreencheGrid(pesquisa clie)
+        public JsonResult PreencheGrid(pesquisaCliente clie)
         {
-            List<Cliente> cliente = clienteRepositorio.ListarTodos().ToList();
+            List<Cliente> cliente = clienteRepositorio.ListarTodos().Where(x => x.UsuarioPaiID == usuarioPai).ToList();
 
             if (clie.Nome != null)
                 cliente = cliente.Where(x => x.Nome.Contains(clie.Nome)).ToList();
@@ -34,8 +54,8 @@ namespace SincolPDV.Aplicacao.Controllers
             if (clie.Sexo != null)
                 cliente = cliente.Where(x => x.Sexo == clie.Sexo).ToList();
 
-            if (clie.Status != 0)
-                cliente = cliente.Where(x => x.Status.StatusId == clie.Status).ToList();
+            if (clie.StatusId != 0)
+                cliente = cliente.Where(x => x.Status.StatusId == clie.StatusId).ToList();
 
             return Json(new { data = cliente }, JsonRequestBehavior.AllowGet);
         }
@@ -55,13 +75,11 @@ namespace SincolPDV.Aplicacao.Controllers
             return View(cliente);
         }
 
-        // GET: Cliente/Create
         public ActionResult NovoCliente()
         {
             return View();
         }
 
-        // POST: Cliente/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult NovoCliente(Cliente cliente)
@@ -70,6 +88,7 @@ namespace SincolPDV.Aplicacao.Controllers
             {
                 cliente.DtCadastro = DateTime.Now;
                 cliente.DtAtualizacao = DateTime.Now;
+                cliente.UsuarioPaiID = usuarioPai;
 
                 clienteRepositorio.Adicionar(cliente);
                 clienteRepositorio.SalvarTodos();
@@ -80,7 +99,6 @@ namespace SincolPDV.Aplicacao.Controllers
             return View(cliente);
         }
 
-        // GET: Cliente/Edit/5
         public ActionResult EditarCliente(int? id)
         {
             if (id == null)
@@ -95,7 +113,6 @@ namespace SincolPDV.Aplicacao.Controllers
             return View(cliente);
         }
 
-        // POST: Cliente/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public void EditarCliente(Cliente clie)
@@ -117,6 +134,7 @@ namespace SincolPDV.Aplicacao.Controllers
                     cliente.LimiteCredito = clie.LimiteCredito;
                     cliente.LimiteDias = clie.LimiteDias;
                     cliente.DtAtualizacao = DateTime.Now;
+                    cliente.Observacao = clie.Observacao;
                     cliente.StatusId = clie.StatusBool ? 1 : 2;
 
                     clienteRepositorio.Atualizar(cliente);
@@ -130,7 +148,6 @@ namespace SincolPDV.Aplicacao.Controllers
             }
         }
 
-        // GET: Cliente/Delete/5
         public ActionResult DeletarCliente(int? id)
         {
             if (id == null)
@@ -145,7 +162,6 @@ namespace SincolPDV.Aplicacao.Controllers
             return View(cliente);
         }
 
-        // POST: Cliente/Delete/5
         [HttpPost, ActionName("DeletarCliente")]
         [ValidateAntiForgeryToken]
         public void DeleteConfirmed(Cliente clie)

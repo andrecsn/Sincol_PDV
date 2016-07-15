@@ -92,12 +92,24 @@
       <HintPath>..\packages\System.Linq.Dynamic.1.0.6\lib\net40\System.Linq.Dynamic.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -160,8 +172,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\FornecedorController.cs" />
+    <Compile Include="Controllers\ProdutoController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -193,6 +208,7 @@
     <Content Include="Images\photo2.png" />
     <Content Include="Images\photo3.jpg" />
     <Content Include="Images\photo4.jpg" />
+    <Content Include="Images\sincol_logo.jpg" />
     <Content Include="Images\user1-128x128.jpg" />
     <Content Include="Images\user2-160x160.jpg" />
     <Content Include="Images\user3-128x128.jpg" />
@@ -250,6 +266,7 @@
     <Content Include="Plugins\css\line\red.css" />
     <Content Include="Plugins\css\line\yellow.css" />
     <Content Include="Plugins\css\line\_all.css" />
+    <Content Include="Plugins\css\login\normalize.css" />
     <Content Include="Plugins\css\minimal\aero%402x.png" />
     <Content Include="Plugins\css\minimal\aero.css" />
     <Content Include="Plugins\css\minimal\aero.png" />
@@ -351,6 +368,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Plugins\_Compartilhado.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Plugins\_Uteis.js" />
     <Content Include="Web.config" />
@@ -364,15 +382,37 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout2.cshtml" />
     <Content Include="Views\Cliente\NovoCliente.cshtml" />
     <Content Include="Views\Cliente\DeletarCliente.cshtml" />
     <Content Include="Views\Cliente\DetalhesCliente.cshtml" />
     <Content Include="Views\Cliente\EditarCliente.cshtml" />
     <Content Include="Views\Cliente\Index.cshtml" />
+    <Content Include="Views\Usuario\Login.cshtml" />
+    <Content Include="Views\Usuario\NovoUsuario.cshtml" />
+    <Content Include="Views\Usuario\DeletarUsuario.cshtml" />
+    <Content Include="Views\Usuario\EditarUsuario.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
+    <Content Include="Views\Usuario\DetalhesUsuario.cshtml" />
+    <Content Include="Views\Usuario\NovaFuncao.cshtml" />
+    <Content Include="Views\Usuario\NovoPerfilAcesso.cshtml" />
+    <Content Include="Views\Usuario\DeletarFuncao.cshtml" />
+    <Content Include="Views\Usuario\DeletarPerfilAcesso.cshtml" />
+    <Content Include="Views\Shared\_PopUp.cshtml" />
+    <Content Include="Views\Produto\Index.cshtml" />
+    <Content Include="Views\Produto\DeletarFabricante.cshtml" />
+    <Content Include="Views\Produto\NovoFabricante.cshtml" />
+    <Content Include="Views\Produto\NovaMarca.cshtml" />
+    <Content Include="Views\Produto\DeletarMarca.cshtml" />
+    <Content Include="Views\Produto\DeletarProduto.cshtml" />
+    <Content Include="Views\Produto\NovoProduto.cshtml" />
+    <Content Include="Views\Produto\NovoEstoque.cshtml" />
+    <Content Include="Views\Produto\DeletarEstoque.cshtml" />
+    <Content Include="Views\Fornecedor\NovoFornecedor.cshtml" />
+    <Content Include="Views\Fornecedor\DeletarFornecedor.cshtml" />
+    <Content Include="Views\Fornecedor\DetalhesFornecedor.cshtml" />
+    <Content Include="Views\Fornecedor\EditarFornecedor.cshtml" />
+    <Content Include="Views\Fornecedor\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

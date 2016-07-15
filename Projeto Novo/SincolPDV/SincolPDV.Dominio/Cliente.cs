@@ -17,11 +17,6 @@ namespace SincolPDV.Dominio
 
         public string tp_pessoa { get; set; }
 
-        public int StatusId { get; set; }
-
-        [ForeignKey("StatusId")]
-        public virtual Status Status { get; set; }
-
         public string CPF { get; set; }
 
         public string CNPJ { get; set; }
@@ -46,6 +41,12 @@ namespace SincolPDV.Dominio
 
         public string Observacao { get; set; }
 
+        public int? UsuarioPaiID { get; set; }
+
+        public int StatusId { get; set; }
+
+        public virtual Status Status { get; set; }
+
         [NotMapped]
         public bool StatusBool
         {
@@ -55,10 +56,10 @@ namespace SincolPDV.Dominio
     }
 
 
-    public class pesquisa
+    public class pesquisaCliente
     {
         public string Nome { get; set; }
         public string Sexo { get; set; }
-        public int Status { get; set; }
+        public int StatusId { get; set; }
     }
 }

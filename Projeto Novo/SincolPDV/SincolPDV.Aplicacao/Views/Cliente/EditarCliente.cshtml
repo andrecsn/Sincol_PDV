@@ -12,7 +12,7 @@
 
     <div class="modal-dialog" id="modal">
         <div class="modal-content">
-            <div class="modal-header btn-success">
+            <div class="modal-header alert-success">
                 <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"></i><span class="sr-only">Close</span></button>
                 <h3 class="modal-title"><i class="fa fa-edit"></i> Editar Cliente</h3>
             </div>
@@ -26,7 +26,6 @@
                             <div class="form-group">
                                 <label>Nome</label>
                                 @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control required", placeholder = "Nome Completo" } })
-                                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
                             </div>
                         </div>
 
@@ -78,7 +77,6 @@
                             <div class="form-group">
                                 <label>CPF</label>
                                 <input type="text" name="CPF" id="CPF" value="@Model.CPF" class="form-control" data-inputmask='"mask": "999.999.999-99"' data-mask>
-                                @Html.ValidationMessageFor(model => model.CPF, "", new { @class = "text-danger" })
                             </div>
                         </div>
 
@@ -86,15 +84,13 @@
                             <div class="form-group">
                                 <label>CNPJ</label>
                                 <input type="text" name="CNPJ" id="CNPJ" value="@Model.CNPJ" class="form-control" data-inputmask='"mask": "999.999.999-99"' data-mask>
-                                @Html.ValidationMessageFor(model => model.CNPJ, "", new { @class = "text-danger" })
                             </div>
                         </div>
 
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label>Telefone</label>
-                                <input type="text" name="Telefone" id="Telefone" value="@Model.Telefone" class="form-control" data-inputmask='"mask": "(99) 99999-9999"' data-mask>
-                                @Html.ValidationMessageFor(model => model.Telefone, "", new { @class = "text-danger" })
+                                <input type="text" name="Telefone" id="Telefone" value="@Model.Telefone" class="form-control required" data-inputmask='"mask": "(99) 99999-9999"' data-mask>
                             </div>
                         </div>
 
@@ -103,8 +99,7 @@
                                 <label>Email</label>
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control required" } })
                                 </div>
                             </div>
                         </div>
@@ -113,8 +108,7 @@
                             <label>Limite de Crédito</label>
                             <div class="input-group">
                                 <span class="input-group-addon">$</span>
-                                @Html.EditorFor(model => model.LimiteCredito, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.LimiteCredito, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.LimiteCredito, new { htmlAttributes = new { @class = "form-control required" } })
                                 <span class="input-group-addon">.00</span>
                             </div>
                         </div>
@@ -122,8 +116,7 @@
                         <div class="col-md-8">
                             <div class="form-group">
                                 <label>Endereço</label>
-                                @Html.EditorFor(model => model.Endereco, new { htmlAttributes = new { @class = "form-control", placeholder = "Endereço completo" } })
-                                @Html.ValidationMessageFor(model => model.Endereco, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.Endereco, new { htmlAttributes = new { @class = "form-control required", placeholder = "Endereço completo" } })
                             </div>
                         </div>
 
@@ -166,7 +159,6 @@
                             <div class="form-group">
                                 <label>Observação</label>
                                 @Html.TextAreaFor(model => model.Observacao, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.Observacao, "", new { @class = "text-danger" })
                             </div>
                         </div>
 
@@ -174,13 +166,15 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" onclick="Incluir('/Cliente/EditarCliente')"><i class="fa fa-save"></i> Salvar Alteração</button>
+                <button type="button" class="btn btn-success" onclick="Incluir('/Cliente/EditarCliente', 'Cliente editado com sucesso!')"><i class="fa fa-save"></i> Salvar Alteração</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-sign-out"></i> Fechar</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 
 }
+
+<script src="~/Plugins/_Compartilhado.js"></script>
 
 <script>
     $(function () {
@@ -209,56 +203,5 @@
                   $("#CPF").val('');
               }
           });
-
-         //===========================================================================================================================
-
-        $(".select2").select2();
-
-        //Datemask dd/mm/yyyy
-        $("#datemask").inputmask("dd/mm/yyyy", {"placeholder": "dd/mm/yyyy"});
-        //Datemask2 mm/dd/yyyy
-        $("#datemask2").inputmask("mm/dd/yyyy", {"placeholder": "mm/dd/yyyy"});
-        //Money Euro
-        $("[data-mask]").inputmask();
-
-        //Date range picker
-        $('#reservation').daterangepicker();
-        //Date range picker with time picker
-        $('#reservationtime').daterangepicker({timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A'});
-        //Date range as a button
-        $('#daterange-btn').daterangepicker(
-            {
-              ranges: {
-                'Today': [moment(), moment()],
-                'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                'This Month': [moment().startOf('month'), moment().endOf('month')],
-                'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-              },
-              startDate: moment().subtract(29, 'days'),
-              endDate: moment()
-            },
-        function (start, end) {
-          $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-        }
-        );
-
-        //iCheck for checkbox and radio inputs
-        $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
-          checkboxClass: 'icheckbox_minimal-blue',
-          radioClass: 'iradio_minimal-blue'
-        });
-        //Red color scheme for iCheck
-        $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
-          checkboxClass: 'icheckbox_minimal-red',
-          radioClass: 'iradio_minimal-red'
-        });
-        //Flat red color scheme for iCheck
-        $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
-          checkboxClass: 'icheckbox_flat-green',
-          radioClass: 'iradio_flat-green'
-        });
-
       });
 </script>

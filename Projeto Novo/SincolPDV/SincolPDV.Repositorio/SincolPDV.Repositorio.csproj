@@ -41,6 +41,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,21 +52,95 @@
   <ItemGroup>
     <Compile Include="Compartilhado\Contexto.cs" />
     <Compile Include="Compartilhado\ModelDbInitializer.cs" />
+    <Compile Include="Compartilhado\Seguranca.cs" />
     <Compile Include="Implementacao\Base\IRepositorio.cs" />
     <Compile Include="Implementacao\Base\Repositorio.cs" />
     <Compile Include="Implementacao\ClienteRepositorio.cs" />
     <Compile Include="Implementacao\CRMRepositorio.cs" />
     <Compile Include="Implementacao\DadosBancariosRepositorio.cs" />
     <Compile Include="Implementacao\EntradaRepositorio.cs" />
+    <Compile Include="Implementacao\EstoqueRepositorio.cs" />
     <Compile Include="Implementacao\FabricanteRepositorio.cs" />
     <Compile Include="Implementacao\FornecedorRepositorio.cs" />
+    <Compile Include="Implementacao\FuncaoUsuarioRepositorio.cs" />
     <Compile Include="Implementacao\InventarioRepositorio.cs" />
+    <Compile Include="Implementacao\MarcaRepositorio.cs" />
     <Compile Include="Implementacao\PerfilAcessoRepositorio.cs" />
     <Compile Include="Implementacao\PerfilTransacaoRepositorio.cs" />
     <Compile Include="Implementacao\ProdutoRepositorio.cs" />
     <Compile Include="Implementacao\SaidaRepositorio.cs" />
+    <Compile Include="Implementacao\StatusRepositorio.cs" />
     <Compile Include="Implementacao\TransferenciaRepositorio.cs" />
     <Compile Include="Implementacao\UsuarioRepositorio.cs" />
+    <Compile Include="Migrations\201605052146266_InitialCreate.cs" />
+    <Compile Include="Migrations\201605052146266_InitialCreate.Designer.cs">
+      <DependentUpon>201605052146266_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605061317475_AlteraçãoUsuario.cs" />
+    <Compile Include="Migrations\201605061317475_AlteraçãoUsuario.Designer.cs">
+      <DependentUpon>201605061317475_AlteraçãoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605111328092_AlteraçãoFuncao.cs" />
+    <Compile Include="Migrations\201605111328092_AlteraçãoFuncao.Designer.cs">
+      <DependentUpon>201605111328092_AlteraçãoFuncao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607011840259_Produtos.cs" />
+    <Compile Include="Migrations\201607011840259_Produtos.Designer.cs">
+      <DependentUpon>201607011840259_Produtos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607011852554_Produtos_Status.cs" />
+    <Compile Include="Migrations\201607011852554_Produtos_Status.Designer.cs">
+      <DependentUpon>201607011852554_Produtos_Status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607011936205_Produtos_3.cs" />
+    <Compile Include="Migrations\201607011936205_Produtos_3.Designer.cs">
+      <DependentUpon>201607011936205_Produtos_3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607061603073_CorrecaoStatus.cs" />
+    <Compile Include="Migrations\201607061603073_CorrecaoStatus.Designer.cs">
+      <DependentUpon>201607061603073_CorrecaoStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607062049068_CorrecaoStatus2.cs" />
+    <Compile Include="Migrations\201607062049068_CorrecaoStatus2.Designer.cs">
+      <DependentUpon>201607062049068_CorrecaoStatus2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607062200179_CorrecaoStatus3.cs" />
+    <Compile Include="Migrations\201607062200179_CorrecaoStatus3.Designer.cs">
+      <DependentUpon>201607062200179_CorrecaoStatus3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607082139105_fornecedor.cs" />
+    <Compile Include="Migrations\201607082139105_fornecedor.Designer.cs">
+      <DependentUpon>201607082139105_fornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607121919429_adicionandoUsuario_1.cs" />
+    <Compile Include="Migrations\201607121919429_adicionandoUsuario_1.Designer.cs">
+      <DependentUpon>201607121919429_adicionandoUsuario_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607121949248_adicionandoUsuario_1_1.cs" />
+    <Compile Include="Migrations\201607121949248_adicionandoUsuario_1_1.Designer.cs">
+      <DependentUpon>201607121949248_adicionandoUsuario_1_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607122003187_adicionandoUsuario_1_1_1.cs" />
+    <Compile Include="Migrations\201607122003187_adicionandoUsuario_1_1_1.Designer.cs">
+      <DependentUpon>201607122003187_adicionandoUsuario_1_1_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607131230357_adicionandoUsuario_1_1_2.cs" />
+    <Compile Include="Migrations\201607131230357_adicionandoUsuario_1_1_2.Designer.cs">
+      <DependentUpon>201607131230357_adicionandoUsuario_1_1_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607131248571_adicionandoUsuario_2.cs" />
+    <Compile Include="Migrations\201607131248571_adicionandoUsuario_2.Designer.cs">
+      <DependentUpon>201607131248571_adicionandoUsuario_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607151816368_UsuarioPai_Cliente.cs" />
+    <Compile Include="Migrations\201607151816368_UsuarioPai_Cliente.Designer.cs">
+      <DependentUpon>201607151816368_UsuarioPai_Cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607151906515_DadosBancarios.cs" />
+    <Compile Include="Migrations\201607151906515_DadosBancarios.Designer.cs">
+      <DependentUpon>201607151906515_DadosBancarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -86,6 +161,59 @@
       <Project>{25d7840d-2f9c-4087-8eb3-27d2db579086}</Project>
       <Name>SincolPDV.Dominio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201605052146266_InitialCreate.resx">
+      <DependentUpon>201605052146266_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605061317475_AlteraçãoUsuario.resx">
+      <DependentUpon>201605061317475_AlteraçãoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605111328092_AlteraçãoFuncao.resx">
+      <DependentUpon>201605111328092_AlteraçãoFuncao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607011840259_Produtos.resx">
+      <DependentUpon>201607011840259_Produtos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607011852554_Produtos_Status.resx">
+      <DependentUpon>201607011852554_Produtos_Status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607011936205_Produtos_3.resx">
+      <DependentUpon>201607011936205_Produtos_3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607061603073_CorrecaoStatus.resx">
+      <DependentUpon>201607061603073_CorrecaoStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607062049068_CorrecaoStatus2.resx">
+      <DependentUpon>201607062049068_CorrecaoStatus2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607062200179_CorrecaoStatus3.resx">
+      <DependentUpon>201607062200179_CorrecaoStatus3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607082139105_fornecedor.resx">
+      <DependentUpon>201607082139105_fornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607121919429_adicionandoUsuario_1.resx">
+      <DependentUpon>201607121919429_adicionandoUsuario_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607121949248_adicionandoUsuario_1_1.resx">
+      <DependentUpon>201607121949248_adicionandoUsuario_1_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607122003187_adicionandoUsuario_1_1_1.resx">
+      <DependentUpon>201607122003187_adicionandoUsuario_1_1_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607131230357_adicionandoUsuario_1_1_2.resx">
+      <DependentUpon>201607131230357_adicionandoUsuario_1_1_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607131248571_adicionandoUsuario_2.resx">
+      <DependentUpon>201607131248571_adicionandoUsuario_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607151816368_UsuarioPai_Cliente.resx">
+      <DependentUpon>201607151816368_UsuarioPai_Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607151906515_DadosBancarios.resx">
+      <DependentUpon>201607151906515_DadosBancarios.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

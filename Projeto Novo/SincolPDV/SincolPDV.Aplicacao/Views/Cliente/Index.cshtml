@@ -1,12 +1,9 @@
-﻿@model IEnumerable<SincolPDV.Dominio.Cliente>
+﻿@model SincolPDV.Dominio.Cliente
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Cliente";
     Layout = "~/Views/Shared/_Layout2.cshtml";
 }
-
-
-
 
 <section class="content-header">
     <h1>
@@ -20,60 +17,53 @@
 
 </br>
 
-<div class="row">
-    <div class="col-md-12">
-        <div class="box box-primary">
-            <div class="box-header">
-                <h3 class="box-title">Pesquisa de Clientes</h3>
+<form id="pesquisa">
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h3 class="box-title">Pesquisa de Clientes</h3>
+            <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
             </div>
-            <form class="form-horizontal" id="pesquisa">
-                <div class="box-body">
-
-                    <div class="form-group">
-                        <label class="col-sm-1 control-label">Nome</label>
-                        <div class="col-sm-5">
-                            <input type="email" class="form-control" id="Nome" name="Nome" placeholder="Nome">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-sm-1 control-label">Sexo</label>
-                        <div class="col-sm-5">
-                            <select id="Sexo" name="Sexo" class="form-control">
-                                <option value="">-- Selecione --</option>
-                                <option value="Masculino"> Masculino </option>
-                                <option value="Feminino"> Feminino </option>
-
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-sm-1 control-label">Status</label>
-                        <div class="col-sm-5">
-                            <select id="Status" name="Status" class="form-control">
-                                <option value=0>-- Selecione --</option>
-                                <option value=1> Ativado </option>
-                                <option value=2> Desativado </option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <hr>
-
-                    <div class="form-group">
-                        <label class="col-sm-1 control-label">&nbsp;</label>
-                        <div class="col-md-5">
-                            <button id="btnPesquisa" class="btn btn-md btn-primary pesquisa">Pesquisar <i class="fa fa-arrow-circle-right"></i></button>
-                            <button id="btnCadastrar" class="btn btn-md btn-success pull-right cadastrar"><i class="fa fa-plus"></i> Novo Cliente </button>
-                        </div>
-                    </div>
-
-                </div>
-            </form>
         </div>
+        <div class="box-body">
+            <div class="row">
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Nome</label>
+                        <input type="email" class="form-control" id="Nome" name="Nome" placeholder="Nome">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Sexo</label>
+                        <select id="Sexo" name="Sexo" class="form-control">
+                            <option value="">-- Selecione --</option>
+                            <option value="Masculino"> Masculino </option>
+                            <option value="Feminino"> Feminino </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Status</label>
+                        @Html.DropDownListFor(model => model.StatusId,
+                                new SelectList(ViewBag.Status, "StatusId", "Descricao"),
+                                new { @class = "form-control select2", style = "width: 100%;" })
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="box-footer">
+            <button id="btnPesquisa" class="btn btn-md btn-primary pesquisa">Pesquisar <i class="fa fa-arrow-circle-right"></i></button>
+            <button id="btnCadastrar" class="btn btn-md btn-success pull-right cadastrar"><i class="fa fa-plus"></i> Novo Cliente </button>
+        </div>
+
     </div>
-</div>
+</form>
+
 
 
 <div class="row">
@@ -115,7 +105,7 @@
 
         $(document).ready(function () {
             //Gerando datatable
-            GeraDataTableCliente();
+            GeraDataTable();
 
             //Botões PopUp
             $('#btnCadastrar').on('click', function () {
@@ -147,90 +137,6 @@
             });
 
         });
-
-        //Incluir Cliente
-        function Incluir(caminho) {
-
-            var cont = 0;
-            $("#formDados .required").each(function () {
-                if($(this).val() == "")
-                {
-                    $(this).css({"border" : "1px solid #F00"});
-                    cont++;
-                }
-            });
-
-            if (cont == 0) {
-                var dadosSerializados = $('#formDados').serialize();
-                $.ajax({
-                    type: "POST",
-                    url: caminho,
-                    data: dadosSerializados,
-                    success: function () {
-                        $("#modal").modal('hide');
-                        MensagemSucesso('Cliente incluirod com Sucesso!');
-                        GeraDataTableCliente();
-                    },
-                    error: function () {
-                        $("#modal").modal('hide');
-                        MensagemErro('Ocorreu um Erro ao Incluir!');
-                    }
-                });
-            } else {
-                $('#formDados #mensagem').css("display", "block");
-            }
-        }
-
-        //Editando Cliente
-        function Editar(caminho) {
-
-            var cont = 0;
-            $("#formDados .required").each(function () {
-                if($(this).val() == "")
-                {
-                    $(this).css({"border" : "1px solid #F00"});
-                    cont++;
-                }
-            });
-
-            if (cont == 0) {
-                var dadosSerializados = $('#formDados').serialize();
-                $.ajax({
-                    type: "POST",
-                    url: caminho,
-                    data: dadosSerializados,
-                    success: function () {
-                        $("#modal").modal('hide');
-                        MensagemSucesso('Item editado com Sucesso!');
-                        GeraDataTableCliente();
-                    },
-                    error: function () {
-                        $("#modal").modal('hide');
-                        MensagemErro('Ocorreu um Erro ao Editar!');
-                    }
-                });
-            }
-        }
-
-        //Deletando Cliente
-        function Deletar(caminho) {
-            var dadosSerializados = $('#formDados').serialize();
-            $.ajax({
-                type: "POST",
-                url: caminho,
-                data: dadosSerializados,
-                success: function () {
-                    $("#modal").modal('hide');
-                    MensagemSucesso('Item Deletado com Sucesso!');
-                    GeraDataTableCliente();
-                },
-                error: function () {
-                    $("#modal").modal('hide');
-                    MensagemErro('Ocorreu um erro ao Deletar!');
-
-                }
-            });
-        }
 
         $("#btnPesquisa").on("click", function (event) {
             event.preventDefault();
@@ -266,10 +172,10 @@
                             { "data": "Sexo" },
                             { "data": "Email" },
                             {
-                                "data": "StatusBool",
-                                "render": function (oObj) {
+                                "data": "Status.StatusId",
+                                "render": function (result) {
                                     var status;
-                                    if (oObj == true) {
+                                    if (result == 1) {
                                         status = "<span class='label label-success'>Ativado</span>";
                                     } else {
                                         status = "<span class='label label-danger'>Desativado</span>";
@@ -279,9 +185,9 @@
                             },
                             {
                                 data: null,
-                                defaultContent: '<button class="btn btn-sm btn-default details"><i class="glyphicon glyphicon-file"></i></button> ' +
-                                                '<button class="btn btn-sm btn-danger delete"><i class="glyphicon glyphicon-trash"></i></button> ' +
-                                                '<button class="btn btn-sm btn-primary edit"><i class="glyphicon glyphicon-edit"></i></button>',
+                                defaultContent: '<button class="btn btn-xs btn-default details"><i class="glyphicon glyphicon-file"></i></button> ' +
+                                                '<button class="btn btn-xs btn-danger delete"><i class="glyphicon glyphicon-trash"></i></button> ' +
+                                                '<button class="btn btn-xs btn-primary edit"><i class="glyphicon glyphicon-edit"></i></button>',
                                 orderable: false
                             },
                         ]
@@ -293,7 +199,7 @@
         });
 
         //Gerando DataTables
-        function GeraDataTableCliente() {
+        function GeraDataTable() {
             $('#example4').DataTable({
                 destroy: true,
                 processing: true,
@@ -315,10 +221,10 @@
                     { "data": "Sexo" },
                     { "data": "Email" },
                     {
-                        "data": "StatusBool",
-                        "render": function (oObj) {
+                        "data": "Status.StatusId",
+                        "render": function (result) {
                             var status;
-                            if (oObj == true) {
+                            if (result == 1) {
                                 status = "<span class='label label-success'>Ativado</span>";
                             } else {
                                 status = "<span class='label label-danger'>Desativado</span>";
@@ -328,9 +234,9 @@
                     },
                     {
                         data: null,
-                        defaultContent: '<button class="btn btn-sm btn-default details"><i class="glyphicon glyphicon-file"></i></button> ' +
-                                        '<button class="btn btn-sm btn-danger delete"><i class="glyphicon glyphicon-trash"></i></button> ' +
-                                        '<button class="btn btn-sm btn-primary edit"><i class="glyphicon glyphicon-edit"></i></button>',
+                        defaultContent: '<button class="btn btn-xs btn-default details"><i class="glyphicon glyphicon-file"></i></button> ' +
+                                        '<button class="btn btn-xs btn-danger delete"><i class="glyphicon glyphicon-trash"></i></button> ' +
+                                        '<button class="btn btn-xs btn-primary edit"><i class="glyphicon glyphicon-edit"></i></button>',
                         orderable: false
                     },
                 ]
