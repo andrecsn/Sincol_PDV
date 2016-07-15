@@ -18,30 +18,31 @@ namespace SincolPDV.Aplicacao.Controllers
         private PerfilAcessoRepositorio perfilAcessoRepositorio = new PerfilAcessoRepositorio();
         private StatusRepositorio statusRepositorio = new StatusRepositorio();
 
-        // GET: Usuario
+
+        private static int UsuarioPai()
+        {
+            Usuario usuario = UsuarioRepositorio.UsuarioLogado;
+
+            if (usuario != null)
+                return usuario.UsuarioPaiID == null ? usuario.UsuarioID : Convert.ToInt32(usuario.UsuarioPaiID);
+            else
+                return 0;
+        }
+        int usuarioPai = UsuarioPai();
+
         public ActionResult Index()
         {
             if (UsuarioRepositorio.UsuarioLogado == null)
                 return Redirect("/Usuario/Login");
 
-            var FuncaoUsuario = funcaoUsuarioRepositorio.ListarTodos().ToList();
-            var PerfilAcesso = perfilAcessoRepositorio.ListarTodos().ToList();
-            var Status = statusRepositorio.ListarTodos().ToList();
-
-            FuncaoUsuario.Add(new FuncaoUsuario { FuncaoUsuarioID = 0, Descricao = "<-- Selecione -->" });
-            PerfilAcesso.Add(new PerfilAcesso { PerfilAcessoID = 0, Descricao = "<-- Selecione -->" });
-            Status.Add(new Status { StatusId = 0, Descricao = "<-- Selecione -->" });
-
-            ViewBag.FuncaoUsuario = FuncaoUsuario.OrderBy(x => x.FuncaoUsuarioID);
-            ViewBag.PerfilAcesso = PerfilAcesso.OrderBy(x => x.PerfilAcessoID);
-            ViewBag.Status = Status.OrderBy(x => x.StatusId);
+            CarregaCombo();
 
             return View();
         }
 
         public JsonResult PreencheGrid(pesquisaUsuario usu)
         {
-            List<Usuario> usuario = usuarioRepositorio.ListarTodos().ToList();
+            List<Usuario> usuario = usuarioRepositorio.ListarTodos().Where(x => x.UsuarioPaiID == usuarioPai & x.UsuarioID != UsuarioRepositorio.UsuarioLogado.UsuarioID).ToList();
 
             if (usu.Nome != null)
                 usuario = usuario.Where(x => x.Nome.Contains(usu.Nome)).ToList();
@@ -58,34 +59,44 @@ namespace SincolPDV.Aplicacao.Controllers
             return Json(new { data = usuario }, JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult Login()
+        private void CarregaCombo()
         {
+            var FuncaoUsuario = funcaoUsuarioRepositorio.ListarTodos().Where(x => x.UsuarioPaiID == usuarioPai).ToList();
+            var PerfilAcesso = perfilAcessoRepositorio.ListarTodos().Where(x => x.UsuarioPaiID == usuarioPai).ToList();
+            var Status = statusRepositorio.ListarTodos().ToList();
+
+            FuncaoUsuario.Add(new FuncaoUsuario { FuncaoUsuarioID = 0, Descricao = "<-- Selecione -->" });
+            PerfilAcesso.Add(new PerfilAcesso { PerfilAcessoID = 0, Descricao = "<-- Selecione -->" });
+            Status.Add(new Status { StatusId = 0, Descricao = "<-- Selecione -->" });
+
+            ViewBag.FuncaoUsuario = FuncaoUsuario.OrderBy(x => x.FuncaoUsuarioID);
+            ViewBag.PerfilAcesso = PerfilAcesso.OrderBy(x => x.PerfilAcessoID);
+            ViewBag.Status = Status.OrderBy(x => x.StatusId);
+        }
+
+        public ActionResult NovoUsuario()
+        {
+            CarregaCombo();
+
             return View();
         }
 
         [HttpPost]
-        public ActionResult Logar(Usuario usuario)
+        [ValidateAntiForgeryToken]
+        public ActionResult NovoUsuario(Usuario usuario)
         {
-            var response = false;
-
-            if (usuarioRepositorio.AutenticarUsuario(usuario.Login, usuario.Senha))
+            if (ModelState.IsValid)
             {
-                //caso esteja correto redirecionamos para a página
-                response = true;
-                return Json(response, JsonRequestBehavior.AllowGet);
-            }
-            else
-            {
-                response = false;
-                return Json(response, JsonRequestBehavior.AllowGet);
-            }
-        }
+                usuario.DataCadastro = DateTime.Now;
+                usuario.UsuarioPaiID = usuarioPai;
 
-        public ActionResult Deslogar()
-        {
-            usuarioRepositorio.Deslogar();
+                usuarioRepositorio.Adicionar(usuario);
+                usuarioRepositorio.SalvarTodos();
 
-            return Redirect("/Usuario/Login");
+                return RedirectToAction("Index");
+            }
+
+            return View(usuario);
         }
 
         [HttpGet]
@@ -103,37 +114,6 @@ namespace SincolPDV.Aplicacao.Controllers
             return View(usuario);
         }
 
-        public ActionResult NovoUsuario()
-        {
-            var FuncaoUsuario = funcaoUsuarioRepositorio.ListarTodos().ToList();
-            var PerfilAcesso = perfilAcessoRepositorio.ListarTodos().ToList();
-
-            FuncaoUsuario.Add(new FuncaoUsuario { FuncaoUsuarioID = 0, Descricao = "<-- Selecione -->" });
-            PerfilAcesso.Add(new PerfilAcesso { PerfilAcessoID = 0, Descricao = "<-- Selecione -->" });
-
-            ViewBag.FuncaoUsuario = FuncaoUsuario.OrderBy(x => x.FuncaoUsuarioID);
-            ViewBag.PerfilAcesso = PerfilAcesso.OrderBy(x => x.PerfilAcessoID);
-
-            return View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult NovoUsuario(Usuario usuario)
-        {
-            if (ModelState.IsValid)
-            {
-                usuario.DataCadastro = DateTime.Now;
-
-                usuarioRepositorio.Adicionar(usuario);
-                usuarioRepositorio.SalvarTodos();
-
-                return RedirectToAction("Index");
-            }
-
-            return View(usuario);
-        }
-
         public ActionResult EditarUsuario(int? id)
         {
             if (id == null)
@@ -146,17 +126,7 @@ namespace SincolPDV.Aplicacao.Controllers
                 return HttpNotFound();
             }
 
-            var FuncaoUsuario = funcaoUsuarioRepositorio.ListarTodos().ToList();
-            var PerfilAcesso = perfilAcessoRepositorio.ListarTodos().ToList();
-            var Status = statusRepositorio.ListarTodos().ToList();
-
-            FuncaoUsuario.Add(new FuncaoUsuario { FuncaoUsuarioID = 0, Descricao = "<-- Selecione -->" });
-            PerfilAcesso.Add(new PerfilAcesso { PerfilAcessoID = 0, Descricao = "<-- Selecione -->" });
-            Status.Add(new Status { StatusId = 0, Descricao = "<-- Selecione -->" });
-
-            ViewBag.FuncaoUsuario = FuncaoUsuario.OrderBy(x => x.FuncaoUsuarioID);
-            ViewBag.PerfilAcesso = PerfilAcesso.OrderBy(x => x.PerfilAcessoID);
-            ViewBag.Status = Status.OrderBy(x => x.StatusId);
+            CarregaCombo();
 
             return View(usuario);
         }
@@ -220,6 +190,180 @@ namespace SincolPDV.Aplicacao.Controllers
                 throw;
             }
         }
+
+
+        //==================================== LOGIN ====================================//
+        //===============================================================================//
+
+        #region Ações de Login
+
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Logar(Usuario usuario)
+        {
+            var response = false;
+
+            if (usuarioRepositorio.AutenticarUsuario(usuario.Login, usuario.Senha))
+            {
+                //caso esteja correto redirecionamos para a página
+                response = true;
+                return Json(response, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                response = false;
+                return Json(response, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        public ActionResult Deslogar()
+        {
+            usuarioRepositorio.Deslogar();
+
+            return Redirect("/Usuario/Login");
+        }
+
+        #endregion
+
+        //==================================== FUNÇÃO ====================================//
+        //===============================================================================//
+        #region Ações de Função
+
+        public JsonResult PreencheGridFuncao()
+        {
+            List<FuncaoUsuario> funcao = funcaoUsuarioRepositorio.ListarTodos().Where(x => x.UsuarioPaiID == usuarioPai & x.StatusId == 1).ToList();
+
+            return Json(new { data = funcao }, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult NovaFuncao()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult NovaFuncao(FuncaoUsuario funcao)
+        {
+            if (ModelState.IsValid)
+            {
+                funcao.StatusId = statusRepositorio.Buscar(1).StatusId;
+                funcao.UsuarioPaiID = usuarioPai;
+
+                funcaoUsuarioRepositorio.Adicionar(funcao);
+                funcaoUsuarioRepositorio.SalvarTodos();
+
+                return RedirectToAction("NovoUsuario");
+            }
+
+            return View(funcao);
+        }
+
+        public ActionResult DeletarFuncao(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            FuncaoUsuario funcao = funcaoUsuarioRepositorio.Listar(x => x.FuncaoUsuarioID == id).FirstOrDefault();
+            if (funcao == null)
+            {
+                return HttpNotFound();
+            }
+            return View(funcao);
+        }
+
+        [HttpPost, ActionName("DeletarFuncao")]
+        [ValidateAntiForgeryToken]
+        public void DeleteConfirmed2(FuncaoUsuario func)
+        {
+            try
+            {
+                FuncaoUsuario funcao = funcaoUsuarioRepositorio.Listar(x => x.FuncaoUsuarioID == func.FuncaoUsuarioID).FirstOrDefault();
+
+                funcao.StatusId = statusRepositorio.Buscar(2).StatusId;
+
+                funcaoUsuarioRepositorio.SalvarTodos();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        #endregion
+
+        //=============================== PERFIL DE ACESSO ===============================//
+        //===============================================================================//
+
+        #region Ações de Perfil de Acesso
+
+        public JsonResult PreencheGridPerfilAcesso()
+        {
+            List<PerfilAcesso> perfilAcesso = perfilAcessoRepositorio.ListarTodos().Where(x => x.UsuarioPaiID == usuarioPai & x.StatusId == 1).ToList();
+
+            return Json(new { data = perfilAcesso }, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult NovoPerfilAcesso()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult NovoPerfilAcesso(PerfilAcesso perfilAcesso)
+        {
+            if (ModelState.IsValid)
+            {
+                perfilAcesso.StatusId = statusRepositorio.Buscar(1).StatusId;
+                perfilAcesso.UsuarioPaiID = usuarioPai;
+
+                perfilAcessoRepositorio.Adicionar(perfilAcesso);
+                perfilAcessoRepositorio.SalvarTodos();
+
+                return RedirectToAction("NovoUsuario");
+            }
+
+            return View(perfilAcesso);
+        }
+
+        public ActionResult DeletarPerfilAcesso(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            PerfilAcesso perfilAcesso = perfilAcessoRepositorio.Listar(x => x.PerfilAcessoID == id).FirstOrDefault();
+            if (perfilAcesso == null)
+            {
+                return HttpNotFound();
+            }
+            return View(perfilAcesso);
+        }
+
+        [HttpPost, ActionName("DeletarPerfilAcesso")]
+        [ValidateAntiForgeryToken]
+        public void DeleteConfirmed3(PerfilAcesso pAcesso)
+        {
+            try
+            {
+                PerfilAcesso perfilAcesso = perfilAcessoRepositorio.Listar(x => x.PerfilAcessoID == pAcesso.PerfilAcessoID).FirstOrDefault();
+
+                perfilAcesso.StatusId = statusRepositorio.Buscar(2).StatusId;
+                perfilAcessoRepositorio.SalvarTodos();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        #endregion
 
         //protected override void Dispose(bool disposing)
         //{

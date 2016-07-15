@@ -30,7 +30,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label>Telefone</label>
-                                <input type="text" name="Telefone" , id="Telefone" class="form-control required" data-inputmask='"mask": "(99) 99999-9999"' data-mask>
+                                <input type="text" name="Telefone" , id="Telefone" class="form-control required" placeholder="(XX) XXXXX-XXXX" data-inputmask='"mask": "(99) 99999-9999"' data-mask>
                             </div>
                         </div>
 
@@ -49,7 +49,7 @@
                                 <label>Função</label>
                                 @Html.DropDownListFor(model => model.FuncaoUsuarioID,
                                 new SelectList(ViewBag.FuncaoUsuario, "FuncaoUsuarioID", "Descricao"),
-                                new { @class = "form-control select2", style = "width: 100%;" })
+                                new { @class = "form-control required select2", style = "width: 100%;" })
                             </div>
                         </div>
 
@@ -58,7 +58,7 @@
                                 <label>Perfil de Acesso</label>
                                 @Html.DropDownListFor(model => model.PerfilAcessoID,
                                 new SelectList(ViewBag.PerfilAcesso, "PerfilAcessoID", "Descricao"),
-                                new { @class = "form-control select2", style = "width: 100%;" })
+                                new { @class = "form-control required select2", style = "width: 100%;" })
                             </div>
                         </div>
 
@@ -82,7 +82,7 @@
                             <div class="form-group">
                                 <label>&nbsp;</label>
                                 <label>
-                                    @Html.CheckBoxFor(model => model.StatusBool, new { @class = "flat-red" })
+                                    @Html.CheckBoxFor(model => model.StatusBool, new { @checked = "checked", @class = "flat-red" })
                                     Ativo
                                 </label>
                             </div>
@@ -100,7 +100,7 @@
 
                 <div class="col-md-6">
                     <div class="form-group">
-                        <button type="button" class="btn btn-success" onclick="Incluir('/Cliente/NovoCliente', 'Cliente incluido com sucesso!')"><i class="fa fa-save"></i> Cadastrar</button>
+                        <button type="button" class="btn btn-success" onclick="Incluir('/Usuario/NovoUsuario', 'Uauário incluido com sucesso!')"><i class="fa fa-save"></i> Cadastrar</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-sign-out"></i> Fechar</button>
                     </div>
                 </div>

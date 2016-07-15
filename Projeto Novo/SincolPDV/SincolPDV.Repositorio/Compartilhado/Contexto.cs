@@ -23,8 +23,10 @@ namespace SincolPDV.Repositorio.Compartilhado
         public DbSet<Entrada> Entrada { get; set; }
         public DbSet<EntradaProduto> EntradaProduto { get; set; }
         public DbSet<Fabricante> Fabricante { get; set; }
+        public DbSet<Marca> Marca { get; set; }
         public DbSet<Fornecedor> Fornecedor { get; set; }
         public DbSet<Inventario> Inventario { get; set; }
+        public DbSet<Estoque> Estoque { get; set; }
         public DbSet<InventarioProduto> InventarioProduto { get; set; }
         public DbSet<PerfilAcesso> PerfilAcesso { get; set; }
         public DbSet<PerfilTransacao> PerfilTransacao { get; set; }
@@ -40,6 +42,7 @@ namespace SincolPDV.Repositorio.Compartilhado
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
         }
     }
 }

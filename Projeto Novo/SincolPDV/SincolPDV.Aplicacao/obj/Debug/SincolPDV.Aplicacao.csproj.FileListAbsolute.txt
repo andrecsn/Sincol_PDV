@@ -60,3 +60,9 @@ C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.
 C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\obj\Debug\SincolPDV.Aplicacao.dll
 C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\obj\Debug\SincolPDV.Aplicacao.pdb
 C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\bin\System.Linq.Dynamic.dll
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\bin\System.Net.Http.Formatting.dll
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\bin\System.Web.Http.dll
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\bin\System.Web.Http.WebHost.dll
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\bin\System.Net.Http.Formatting.xml
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\bin\System.Web.Http.xml
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Aplicacao\bin\System.Web.Http.WebHost.xml

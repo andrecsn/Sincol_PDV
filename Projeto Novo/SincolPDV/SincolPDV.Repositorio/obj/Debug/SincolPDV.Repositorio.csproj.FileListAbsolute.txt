@@ -14,3 +14,17 @@ C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.
 C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\obj\Debug\SincolPDV.Repositorio.csproj.GenerateResource.Cache
 C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\obj\Debug\SincolPDV.Repositorio.Migrations.AlteraçãoUsuario.resources
 C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\obj\Debug\SincolPDV.Repositorio.Migrations.AlteraçãoFuncao.resources
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\obj\Debug\SincolPDV.Repositorio.Migrations.Produtos.resources
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\obj\Debug\SincolPDV.Repositorio.Migrations.Produtos_Status.resources
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\obj\Debug\SincolPDV.Repositorio.Migrations.Produtos_3.resources
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\obj\Debug\SincolPDV.Repositorio.Migrations.CorrecaoStatus.resources
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\obj\Debug\SincolPDV.Repositorio.Migrations.CorrecaoStatus2.resources
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\obj\Debug\SincolPDV.Repositorio.Migrations.CorrecaoStatus3.resources
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\obj\Debug\SincolPDV.Repositorio.Migrations.fornecedor.resources
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\obj\Debug\SincolPDV.Repositorio.Migrations.adicionandoUsuario_1.resources
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\obj\Debug\SincolPDV.Repositorio.Migrations.adicionandoUsuario_1_1.resources
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\obj\Debug\SincolPDV.Repositorio.Migrations.adicionandoUsuario_1_1_1.resources
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\obj\Debug\SincolPDV.Repositorio.Migrations.adicionandoUsuario_1_1_2.resources
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\obj\Debug\SincolPDV.Repositorio.Migrations.adicionandoUsuario_2.resources
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\obj\Debug\SincolPDV.Repositorio.Migrations.UsuarioPai_Cliente.resources
+C:\Users\anogueira\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\obj\Debug\SincolPDV.Repositorio.Migrations.DadosBancarios.resources

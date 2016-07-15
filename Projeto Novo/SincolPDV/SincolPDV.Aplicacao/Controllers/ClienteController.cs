@@ -20,6 +20,17 @@ namespace SincolPDV.Aplicacao.Controllers
         private ClienteRepositorio clienteRepositorio = new ClienteRepositorio();
         private StatusRepositorio statusRepositorio = new StatusRepositorio();
 
+        private static int UsuarioPai()
+        {
+            Usuario usuario = UsuarioRepositorio.UsuarioLogado;
+
+            if (usuario != null)
+                return usuario.UsuarioPaiID == null ? usuario.UsuarioID : Convert.ToInt32(usuario.UsuarioPaiID);
+            else
+                return 0;
+        }
+        int usuarioPai = UsuarioPai();
+
         public ActionResult Index()
         {
             if (UsuarioRepositorio.UsuarioLogado == null)
@@ -35,7 +46,7 @@ namespace SincolPDV.Aplicacao.Controllers
 
         public JsonResult PreencheGrid(pesquisaCliente clie)
         {
-            List<Cliente> cliente = clienteRepositorio.ListarTodos().ToList();
+            List<Cliente> cliente = clienteRepositorio.ListarTodos().Where(x => x.UsuarioPaiID == usuarioPai).ToList();
 
             if (clie.Nome != null)
                 cliente = cliente.Where(x => x.Nome.Contains(clie.Nome)).ToList();
@@ -77,6 +88,7 @@ namespace SincolPDV.Aplicacao.Controllers
             {
                 cliente.DtCadastro = DateTime.Now;
                 cliente.DtAtualizacao = DateTime.Now;
+                cliente.UsuarioPaiID = usuarioPai;
 
                 clienteRepositorio.Adicionar(cliente);
                 clienteRepositorio.SalvarTodos();
@@ -122,6 +134,7 @@ namespace SincolPDV.Aplicacao.Controllers
                     cliente.LimiteCredito = clie.LimiteCredito;
                     cliente.LimiteDias = clie.LimiteDias;
                     cliente.DtAtualizacao = DateTime.Now;
+                    cliente.Observacao = clie.Observacao;
                     cliente.StatusId = clie.StatusBool ? 1 : 2;
 
                     clienteRepositorio.Atualizar(cliente);

@@ -23,8 +23,7 @@ namespace SincolPDV.Dominio
 
         public int StatusId { get; set; }
 
-        [ForeignKey("StatusId")]
-        public Status Status { get; set; }
+        public virtual Status Status { get; set; }
 
         public int FuncaoUsuarioID { get; set; }
 
@@ -37,6 +36,8 @@ namespace SincolPDV.Dominio
         public virtual PerfilAcesso PerfilAcesso { get; set; }
 
         public DateTime DataCadastro { get; set; }
+
+        public int? UsuarioPaiID { get; set; }
 
         [NotMapped]
         public bool StatusBool
