@@ -34,7 +34,7 @@ namespace SincolPDV.Aplicacao.Controllers
         public ActionResult Index()
         {
             if (UsuarioRepositorio.UsuarioLogado == null)
-                return Redirect("/Usuario/Login");
+                return Redirect("/NovoPdv/Usuario/Login");
 
             var Status = statusRepositorio.ListarTodos().ToList();
             Status.Add(new Status { StatusId = 0, Descricao = "<-- Selecione -->" });

@@ -23,19 +23,6 @@ namespace SincolPDV.Repositorio.Migrations
             DropIndex("dbo.Fabricante", new[] { "StatusId" });
             DropIndex("dbo.Marca", new[] { "StatusId" });
             DropIndex("dbo.FuncaoUsuario", new[] { "StatusId" });
-            RenameColumn(table: "dbo.Marca", name: "StatusId", newName: "Status_StatusId");
-            AlterColumn("dbo.Marca", "Status_StatusId", c => c.Int());
-            CreateIndex("dbo.Marca", "Status_StatusId");
-            AddForeignKey("dbo.Cliente", "StatusId", "dbo.Status", "StatusId");
-            AddForeignKey("dbo.Produto", "EstoqueID", "dbo.Estoque", "EstoqueID");
-            AddForeignKey("dbo.Produto", "StatusId", "dbo.Status", "StatusId");
-            AddForeignKey("dbo.Marca", "Status_StatusId", "dbo.Status", "StatusId");
-            AddForeignKey("dbo.Usuario", "FuncaoUsuarioID", "dbo.FuncaoUsuario", "FuncaoUsuarioID");
-            AddForeignKey("dbo.Usuario", "PerfilAcessoID", "dbo.PerfilAcesso", "PerfilAcessoID");
-            AddForeignKey("dbo.Usuario", "StatusId", "dbo.Status", "StatusId");
-            DropColumn("dbo.Fornecedor", "StatusId");
-            DropColumn("dbo.Fabricante", "StatusId");
-            DropColumn("dbo.FuncaoUsuario", "StatusId");
         }
         
         public override void Down()

@@ -10,10 +10,7 @@ namespace SincolPDV.Repositorio.Migrations
             AddColumn("dbo.Fornecedor", "StatusId", c => c.Int(nullable: false));
             AddColumn("dbo.Fabricante", "StatusId", c => c.Int(nullable: false));
             AddColumn("dbo.FuncaoUsuario", "StatusId", c => c.Int(nullable: false));
-            CreateIndex("dbo.Fornecedor", "StatusId");
-            CreateIndex("dbo.Estoque", "StatusId");
-            CreateIndex("dbo.Fabricante", "StatusId");
-            CreateIndex("dbo.FuncaoUsuario", "StatusId");
+
         }
         
         public override void Down()

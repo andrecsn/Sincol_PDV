@@ -15,7 +15,7 @@ namespace SincolPDV.Aplicacao
 
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
+                url: "NovoPdv/{controller}/{action}/{id}",
                 defaults: new { controller = "Usuario", action = "Login", id = UrlParameter.Optional }
             );
         }

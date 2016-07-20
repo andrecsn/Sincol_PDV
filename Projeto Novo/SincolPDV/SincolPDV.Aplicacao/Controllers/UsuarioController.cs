@@ -33,7 +33,7 @@ namespace SincolPDV.Aplicacao.Controllers
         public ActionResult Index()
         {
             if (UsuarioRepositorio.UsuarioLogado == null)
-                return Redirect("/Usuario/Login");
+                return Redirect("/NovoPdv/Usuario/Login");
 
             CarregaCombo();
 
@@ -202,6 +202,11 @@ namespace SincolPDV.Aplicacao.Controllers
             return View();
         }
 
+        public ActionResult Logar()
+        {
+            return View();
+        }
+
         [HttpPost]
         public ActionResult Logar(Usuario usuario)
         {
@@ -224,7 +229,7 @@ namespace SincolPDV.Aplicacao.Controllers
         {
             usuarioRepositorio.Deslogar();
 
-            return Redirect("/Usuario/Login");
+            return Redirect("/NovoPdv/Usuario/Login");
         }
 
         #endregion

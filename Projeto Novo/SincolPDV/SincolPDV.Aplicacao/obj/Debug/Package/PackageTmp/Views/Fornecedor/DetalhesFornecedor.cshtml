@@ -1,0 +1,111 @@
+﻿@model SincolPDV.Dominio.Fornecedor
+
+@{
+    ViewBag.Title = "Details";
+    Layout = null;
+}
+
+
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header  bg-primary">
+            <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"></i><span class="sr-only">Close</span></button>
+            <h3 class="modal-title"><i class="fa fa-sticky-note"></i> Detalhes do Fornecedor</h3>
+        </div>
+        <div class="modal-body">
+
+            <form class="form-horizontal">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Nome: </label>
+                        <div class="col-sm-8">
+                            @Html.DisplayFor(model => model.Nome)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Tipo Pessoa: </label>
+                        <div class="col-sm-8">
+                            @Html.DisplayFor(model => model.Pessoa)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">CPF:</label>
+                        <div class="col-sm-8">
+                            @Html.DisplayFor(model => model.CPF)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">CNPJ:</label>
+                        <div class="col-sm-8">
+                            @Html.DisplayFor(model => model.CNPJ)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Telefone:</label>
+                        <div class="col-sm-8">
+                            @Html.DisplayFor(model => model.Telefone)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Email:</label>
+                        <div class="col-sm-8">
+                            @Html.DisplayFor(model => model.Email)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Endereço:</label>
+                        <div class="col-sm-8">
+                            @Html.DisplayFor(model => model.Endereco)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Agência/Conta:</label>
+                        <div class="col-sm-8">
+                            @Html.DisplayFor(model => model.dadosBancarios.Banco) - @Html.DisplayFor(model => model.dadosBancarios.Agencia) / @Html.DisplayFor(model => model.dadosBancarios.Conta)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Data de Cadastro:</label>
+                        <div class="col-sm-8">
+                            @Html.DisplayFor(model => model.DtCadastro)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Status:</label>
+                        <div class="col-sm-8">
+                            @if (Model.StatusBool == false)
+                            {
+                                <span class="label label-danger">Desativado</span>
+                            }
+                            else
+                            {
+                                <span class="label label-success">Ativado</span>
+                            }
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Observação:</label>
+                        <div class="col-sm-4">
+                            @Html.DisplayFor(model => model.Observacao)
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-sign-out"></i> Fechar</button>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->

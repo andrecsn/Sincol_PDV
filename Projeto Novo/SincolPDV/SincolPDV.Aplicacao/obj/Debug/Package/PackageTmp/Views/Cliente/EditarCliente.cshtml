@@ -1,0 +1,207 @@
+﻿@model SincolPDV.Dominio.Cliente
+
+@{
+    ViewBag.Title = "Editar Cliente";
+    Layout = null;
+}
+
+
+@using (Html.BeginForm("EditarCliente", "Cliente", FormMethod.Post, new { id = "formDados" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="modal-dialog" id="modal">
+        <div class="modal-content">
+            <div class="modal-header alert-success">
+                <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"></i><span class="sr-only">Close</span></button>
+                <h3 class="modal-title"><i class="fa fa-edit"></i> Editar Cliente</h3>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="box-body">
+
+                        @Html.HiddenFor(model => model.ClienteID)
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Nome</label>
+                                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control required", placeholder = "Nome Completo" } })
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Sexo</label>
+                                @Html.DropDownListFor(model => model.Sexo,
+                                    new SelectList(
+                                  new List<Object>{
+                                       new { value = "" , text = "-- Selecione --"  },
+                                       new { value = "Masculino" , text = "Masculino" },
+                                       new { value = "Feminino" , text = "Feminino"}
+                                    },
+                                  "value",
+                                  "text",
+                                   2), new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Data de Nascimento</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                    <input type="text" name="DtNascimento" id="DtNascimento" value="@Model.DtNascimento" class="form-control" data-inputmask="'alias': 'mm/dd/yyyy'" data-mask>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Pessoa-Tipo</label>
+                                @Html.DropDownListFor(model => model.tp_pessoa,
+                                    new SelectList(
+                                  new List<Object>{
+                                       new { value = "" , text = "-- Selecione --"  },
+                                       new { value = "Física" , text = "Física" },
+                                       new { value = "Jurídica" , text = "Jurídica"}
+                                    },
+                                  "value",
+                                  "text",
+                                   2), new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-4" id="cpfBox" style="display: none;">
+                            <div class="form-group">
+                                <label>CPF</label>
+                                <input type="text" name="CPF" id="CPF" value="@Model.CPF" class="form-control" data-inputmask='"mask": "999.999.999-99"' data-mask>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4" id="cnpjBox" style="display: none;">
+                            <div class="form-group">
+                                <label>CNPJ</label>
+                                <input type="text" name="CNPJ" id="CNPJ" value="@Model.CNPJ" class="form-control" data-inputmask='"mask": "999.999.999-99"' data-mask>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Telefone</label>
+                                <input type="text" name="Telefone" id="Telefone" value="@Model.Telefone" class="form-control required" data-inputmask='"mask": "(99) 99999-9999"' data-mask>
+                            </div>
+                        </div>
+
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label>Email</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control required" } })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label>Limite de Crédito</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">$</span>
+                                @Html.EditorFor(model => model.LimiteCredito, new { htmlAttributes = new { @class = "form-control required" } })
+                                <span class="input-group-addon">.00</span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label>Endereço</label>
+                                @Html.EditorFor(model => model.Endereco, new { htmlAttributes = new { @class = "form-control required", placeholder = "Endereço completo" } })
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Dias de Emprestimo</label>
+                                @Html.DropDownListFor(model => model.LimiteDias,
+                                    new SelectList(
+                                  new List<Object>{
+                                       new { value = 0 , text = "-- Selecione --"  },
+                                       new { value = 1 , text = "01 Dia" },
+                                       new { value = 2 , text = "02 Dias"},
+                                       new { value = 3 , text = "03 Dias"},
+                                       new { value = 4 , text = "04 Dias"},
+                                       new { value = 5 , text = "05 Dias"},
+                                       new { value = 6 , text = "06 Dias"},
+                                       new { value = 7 , text = "07 Dias"},
+                                       new { value = 8 , text = "08 Dias"},
+                                       new { value = 9 , text = "09 Dias"},
+                                       new { value = 10 , text = "10 Dias"},
+                                       new { value = 11 , text = "11 Dias"},
+                                    },
+                                  "value",
+                                  "text",
+                                   2), new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>&nbsp;</label>
+                                <label>
+                                    @Html.CheckBoxFor(model => model.StatusBool, new { @class = "flat-red" })
+                                    Ativo
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Observação</label>
+                                @Html.TextAreaFor(model => model.Observacao, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" onclick="Incluir('/Cliente/EditarCliente', 'Cliente editado com sucesso!')"><i class="fa fa-save"></i> Salvar Alteração</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-sign-out"></i> Fechar</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+
+}
+
+<script src="~/Plugins/_Compartilhado.js"></script>
+
+<script>
+    $(function () {
+
+        var selectInicio = $("#tp_pessoa option:selected").val();
+        if (selectInicio == "Física") {
+            $("#cpfBox").css("display", "block");
+            $("#cnpjBox").css("display", "none");
+        } else {
+            $("#cpfBox").css("display", "none");
+            $("#cnpjBox").css("display", "block");
+        }
+
+
+          $("#tp_pessoa").change(function () {
+              var select = $("#tp_pessoa option:selected").val();
+
+              if (select == "Física") {
+                  $("#cpfBox").css("display", "block");
+                  $("#cnpjBox").css("display", "none");
+                  $("#CNPJ").val('');
+              }
+              else {
+                  $("#cpfBox").css("display", "none");
+                  $("#cnpjBox").css("display", "block");
+                  $("#CPF").val('');
+              }
+          });
+      });
+</script>

@@ -35,7 +35,7 @@ namespace SincolPDV.Aplicacao.Controllers
         public ActionResult Index()
         {
             if (UsuarioRepositorio.UsuarioLogado == null)
-                return Redirect("/Usuario/Login");
+                return Redirect("/NovoPdv/Usuario/Login");
 
             CarregaCombo();
 
