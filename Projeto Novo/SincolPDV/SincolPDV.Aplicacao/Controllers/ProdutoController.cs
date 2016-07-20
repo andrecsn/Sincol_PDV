@@ -118,7 +118,7 @@ namespace SincolPDV.Aplicacao.Controllers
             return View(produto);
         }
 
-        public ActionResult EditarUsuario(int? id)
+        public ActionResult EditarProduto(int? id)
         {
             if (id == null)
             {
@@ -146,6 +146,7 @@ namespace SincolPDV.Aplicacao.Controllers
                 {
                     produto.Referencia = prod.Referencia;
                     produto.Nome = prod.Nome;
+                    produto.Descricao = prod.Descricao;
                     produto.Modelo = produto.Modelo;
                     produto.FabricanteID = prod.FabricanteID;
                     produto.FornecedorID = prod.FornecedorID;

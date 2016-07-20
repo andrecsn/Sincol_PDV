@@ -148,21 +148,21 @@
 
             $('#GridProduto tbody').on('click', '.details', function () {
                 var data = $(this).parent().parent().find('span').data('codigo');
-                $("#modal").load("DetalhesUsuario?id=" + data, function () {
+                $("#modal").load("DetalhesProduto?id=" + data, function () {
                     $("#modal").modal('show');
                 })
             });
 
             $('#GridProduto tbody').on('click', '.edit', function () {
                 var data = $(this).parent().parent().find('span').data('codigo');
-                $("#modal").load("EditarUsuario?id=" + data, function () {
+                $("#modal").load("EditarProduto?id=" + data, function () {
                     $("#modal").modal('show');
                 })
             });
 
             $('#GridProduto tbody').on('click', '.delete', function () {
                 var data = $(this).parent().parent().find('span').data('codigo');
-                $("#modal").load("DeletarUsuario?id=" + data, function () {
+                $("#modal").load("DeletarProduto?id=" + data, function () {
                     $("#modal").modal('show');
                 })
             });
@@ -192,16 +192,24 @@
                         columns: [
                             {
                                 "data": "ProdutoID",
-                                //"visible": false,
                                 "render": function (id) {
                                     var status = "<span data-codigo='" + id + "'>" + id + "</span>";
                                     return status;
                                 }
                             },
                             { "data": "Nome" },
-                            { "data": "Fabricante.Descricao" },
-                            { "data": "Marca.Descricao" },
-                            { "data": "Fornecedor.Nome" },
+                            {
+                                defaultContent: "",
+                                "data": "Fabricante.Descricao"
+                            },
+                            {
+                                defaultContent: "",
+                                "data": "Marca.Descricao"
+                            },
+                            {
+                                defaultContent: "",
+                                "data": "Fornecedor.Nome"
+                            },
                             {
                                 "data": "Status.StatusId",
                                 "render": function (result) {
@@ -216,9 +224,9 @@
                             },
                             {
                                 data: null,
-                                defaultContent: '<button class="btn btn-sm btn-default details"><i class="glyphicon glyphicon-file"></i></button> ' +
-                                                '<button class="btn btn-sm btn-danger delete"><i class="glyphicon glyphicon-trash"></i></button> ' +
-                                                '<button class="btn btn-sm btn-primary edit"><i class="glyphicon glyphicon-edit"></i></button>',
+                                defaultContent: '<button class="btn btn-xs btn-default details"><i class="glyphicon glyphicon-file"></i></button> ' +
+                                                '<button class="btn btn-xs btn-danger delete"><i class="glyphicon glyphicon-trash"></i></button> ' +
+                                                '<button class="btn btn-xs btn-primary edit"><i class="glyphicon glyphicon-edit"></i></button>',
                                 orderable: false
                             },
                         ]
@@ -248,9 +256,18 @@
                         }
                     },
                     { "data": "Nome" },
-                    { "data": "Fabricante.Descricao" },
-                    { "data": "Marca.Descricao" },
-                    { "data": "Fornecedor.Nome" },
+                    {
+                        defaultContent: "",
+                        "data": "Fabricante.Descricao"
+                    },
+                    {
+                        defaultContent: "",
+                        "data": "Marca.Descricao"
+                    },
+                    {
+                        defaultContent: "",
+                        "data": "Fornecedor.Nome"
+                    },
                     {
                         "data": "Status.StatusId",
                         "render": function (result) {
@@ -265,9 +282,9 @@
                     },
                     {
                         data: null,
-                        defaultContent: '<button class="btn btn-sm btn-default details"><i class="glyphicon glyphicon-file"></i></button> ' +
-                                        '<button class="btn btn-sm btn-danger delete"><i class="glyphicon glyphicon-trash"></i></button> ' +
-                                        '<button class="btn btn-sm btn-primary edit"><i class="glyphicon glyphicon-edit"></i></button>',
+                        defaultContent: '<button class="btn btn-xs btn-default details"><i class="glyphicon glyphicon-file"></i></button> ' +
+                                        '<button class="btn btn-xs btn-danger delete"><i class="glyphicon glyphicon-trash"></i></button> ' +
+                                        '<button class="btn btn-xs btn-primary edit"><i class="glyphicon glyphicon-edit"></i></button>',
                         orderable: false
                     },
                 ]

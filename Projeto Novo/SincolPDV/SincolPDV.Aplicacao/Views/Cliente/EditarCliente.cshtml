@@ -99,7 +99,7 @@
                                 <label>Email</label>
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control required" } })
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
                                 </div>
                             </div>
                         </div>
@@ -116,7 +116,7 @@
                         <div class="col-md-8">
                             <div class="form-group">
                                 <label>Endereço</label>
-                                @Html.EditorFor(model => model.Endereco, new { htmlAttributes = new { @class = "form-control required", placeholder = "Endereço completo" } })
+                                @Html.EditorFor(model => model.Endereco, new { htmlAttributes = new { @class = "form-control", placeholder = "Endereço completo" } })
                             </div>
                         </div>
 
@@ -166,7 +166,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" onclick="Incluir('/Cliente/EditarCliente', 'Cliente editado com sucesso!')"><i class="fa fa-save"></i> Salvar Alteração</button>
+                <button type="button" class="btn btn-success" onclick="Editar('/Cliente/EditarCliente', 'Cliente alterado com sucesso!')"><i class="fa fa-save"></i> Salvar Alteração</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-sign-out"></i> Fechar</button>
             </div>
         </div><!-- /.modal-content -->

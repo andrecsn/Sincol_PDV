@@ -45,3 +45,6 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+*.user
+Projeto Novo/SincolPDV/SincolPDV.Aplicacao/Properties/PublishProfiles/Local.pubxml.user
+*.pdb
