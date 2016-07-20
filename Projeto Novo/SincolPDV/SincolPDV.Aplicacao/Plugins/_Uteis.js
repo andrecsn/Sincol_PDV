@@ -43,7 +43,7 @@ function Incluir(caminho, mensagem) {
         var dadosSerializados = $('#formDados').serialize();
         $.ajax({
             type: "POST",
-            url: caminho,
+            url: "/NovoPdv" + caminho,
             data: dadosSerializados,
             success: function () {
                 $("#modal").modal('hide');
@@ -67,7 +67,7 @@ function Editar(caminho, mensagem) {
         var dadosSerializados = $('#formDados').serialize();
         $.ajax({
             type: "POST",
-            url: caminho,
+            url: "/NovoPdv" + caminho,
             data: dadosSerializados,
             success: function () {
                 $("#modal").modal('hide');
@@ -90,7 +90,7 @@ function Deletar(caminho, mensagem) {
     var dadosSerializados = $('#formDados').serialize();
     $.ajax({
         type: "POST",
-        url: caminho,
+        url: "/NovoPdv" + caminho,
         data: dadosSerializados,
         success: function () {
             $("#modal").modal('hide');
@@ -120,7 +120,7 @@ function IncluirPopUp(caminho, mensagem) {
         var dadosSerializados = $('#formDados').serialize();
         $.ajax({
             type: "POST",
-            url: caminho,
+            url: "/NovoPdv" + caminho,
             data: dadosSerializados,
             success: function () {
                 MensagemSucesso(mensagem);
@@ -139,7 +139,7 @@ function DeletarModal(caminho, modal, mensagem) {
     var dadosSerializados = $('#formDados2').serialize();
     $.ajax({
         type: "POST",
-        url: caminho,
+        url: "/NovoPdv" + caminho,
         data: dadosSerializados,
         success: function () {
             $(modal).modal('hide');

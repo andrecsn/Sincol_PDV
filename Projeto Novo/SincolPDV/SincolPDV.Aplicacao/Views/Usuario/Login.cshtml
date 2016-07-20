@@ -23,7 +23,7 @@
         body {
             font-family: "Open Sans", sans-serif;
             height: 100vh;
-            background: url("Images/fundo_login.jpg") 50% fixed;
+            background: url("http://sincolsoftware.com.br/NovoPdv/Images/fundo_login.jpg") 50% fixed;
             background-size: cover;
         }
 
@@ -280,7 +280,12 @@
                     $state.html('Ocorreu um erro inesperado!');
                     $this.removeClass('ok loading');
                     $this.addClass('erro');
-                    working = false;
+                    setTimeout(function () {
+                        $state.html('Entrar no Sistema');
+                        $this.removeClass('erro loading');
+                        $this.addClass('state');
+                        working = false;
+                    }, 3000);
                 }
             });
 

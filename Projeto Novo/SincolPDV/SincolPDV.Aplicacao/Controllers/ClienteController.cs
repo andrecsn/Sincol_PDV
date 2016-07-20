@@ -84,12 +84,12 @@ namespace SincolPDV.Aplicacao.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult NovoCliente(Cliente cliente)
         {
+            cliente.DtCadastro = DateTime.Now;
+            cliente.DtAtualizacao = DateTime.Now;
+            cliente.UsuarioPaiID = usuarioPai;
+
             if (ModelState.IsValid)
             {
-                cliente.DtCadastro = DateTime.Now;
-                cliente.DtAtualizacao = DateTime.Now;
-                cliente.UsuarioPaiID = usuarioPai;
-
                 clienteRepositorio.Adicionar(cliente);
                 clienteRepositorio.SalvarTodos();
 

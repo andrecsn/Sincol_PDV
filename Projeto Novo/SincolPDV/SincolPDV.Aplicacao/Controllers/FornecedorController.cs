@@ -179,7 +179,7 @@ namespace SincolPDV.Aplicacao.Controllers
             {
                 Fornecedor fornecedor = fornecedorRepositorio.Listar(x => x.FornecedorID == forn.FornecedorID).FirstOrDefault();
 
-                fornecedor.StatusId = fornecedorRepositorio.Buscar(2).StatusId;
+                fornecedor.StatusId = statusRepositorio.Buscar(2).StatusId;
 
                 fornecedorRepositorio.SalvarTodos();
             }
