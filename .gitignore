@@ -60,3 +60,5 @@ Projeto Novo/SincolPDV/.vs/config/applicationhost.config
 *.pdb
 *.dll
 *.Cache
+Projeto Novo/SincolPDV/SincolPDV.Repositorio/obj/Debug/SincolPDV.Repositorio.pdb
+*.dll

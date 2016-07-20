@@ -19,6 +19,8 @@
                 <div class="row">
                     <div class="box-body">
 
+                        @Html.HiddenFor(model => model.UsuarioID)
+
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Nome</label>
@@ -99,7 +101,7 @@
 
                 <div class="col-md-6">
                     <div class="form-group">
-                        <button type="button" class="btn btn-success" onclick="Incluir('/Cliente/NovoCliente', 'Cliente incluido com sucesso!')"><i class="fa fa-save"></i>  Salvar Alteração</button>
+                        <button type="button" class="btn btn-success" onclick="Editar('/Usuario/EditarUsuario', 'Usuário alterado com sucesso!')"><i class="fa fa-save"></i>  Salvar Alteração</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-sign-out"></i> Fechar</button>
                     </div>
                 </div>
