@@ -23,7 +23,7 @@ namespace SincolPDV.Dominio
 
         public string Endereco { get; set; }
 
-        public int DadosBancariosID { get; set; }
+        public int? DadosBancariosID { get; set; }
 
         public virtual DadosBancarios dadosBancarios { get; set; }
 

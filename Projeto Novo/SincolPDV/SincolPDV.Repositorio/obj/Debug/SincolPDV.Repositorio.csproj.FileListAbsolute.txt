@@ -64,3 +64,5 @@ C:\Users\Outros\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Rep
 C:\Users\Outros\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\obj\Debug\SincolPDV.Repositorio.csproj.GenerateResource.Cache
 C:\Users\Outros\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\obj\Debug\SincolPDV.Repositorio.dll
 C:\Users\Outros\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\obj\Debug\SincolPDV.Repositorio.pdb
+C:\Users\Outros\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\obj\Debug\SincolPDV.Repositorio.Migrations.acerto_FK.resources
+C:\Users\Outros\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Repositorio\obj\Debug\SincolPDV.Repositorio.Migrations.acertoCliente.resources

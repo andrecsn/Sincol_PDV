@@ -113,22 +113,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/18/2016 22:52:37</publishTime>
     </File>
     <File Include="bin/SincolPDV.Aplicacao.dll">
-      <publishTime>07/20/2016 00:02:43</publishTime>
+      <publishTime>07/20/2016 15:05:42</publishTime>
     </File>
     <File Include="bin/SincolPDV.Aplicacao.pdb">
-      <publishTime>07/20/2016 00:02:43</publishTime>
+      <publishTime>07/20/2016 15:05:42</publishTime>
     </File>
     <File Include="bin/SincolPDV.Dominio.dll">
-      <publishTime>07/20/2016 00:02:22</publishTime>
+      <publishTime>07/20/2016 15:05:10</publishTime>
     </File>
     <File Include="bin/SincolPDV.Dominio.pdb">
-      <publishTime>07/20/2016 00:02:22</publishTime>
+      <publishTime>07/20/2016 15:05:10</publishTime>
     </File>
     <File Include="bin/SincolPDV.Repositorio.dll">
-      <publishTime>07/20/2016 00:02:25</publishTime>
+      <publishTime>07/20/2016 15:05:35</publishTime>
     </File>
     <File Include="bin/SincolPDV.Repositorio.pdb">
-      <publishTime>07/20/2016 00:02:25</publishTime>
+      <publishTime>07/20/2016 15:05:35</publishTime>
     </File>
     <File Include="bin/System.Linq.Dynamic.dll">
       <publishTime>07/18/2016 22:52:39</publishTime>
@@ -839,7 +839,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/18/2016 22:52:25</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/20/2016 00:03:41</publishTime>
+      <publishTime>07/20/2016 15:06:19</publishTime>
     </File>
   </ItemGroup>
 </Project>

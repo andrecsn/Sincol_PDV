@@ -14,3 +14,4 @@ C:\Users\Outros\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Dom
 C:\Users\Outros\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Dominio\bin\Debug\normnfkd.nlp
 C:\Users\Outros\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Dominio\obj\Debug\SincolPDV.Dominio.dll
 C:\Users\Outros\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Dominio\obj\Debug\SincolPDV.Dominio.pdb
+C:\Users\Outros\Documents\GitHub\Sincol_PDV\Projeto Novo\SincolPDV\SincolPDV.Dominio\obj\Debug\SincolPDV.Dominio.csprojResolveAssemblyReference.cache
