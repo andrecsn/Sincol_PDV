@@ -27,7 +27,7 @@ namespace SincolPDV.Dominio
 
         public string Sexo { get; set; }
 
-        public DateTime DtNascimento { get; set; }
+        public DateTime? DtNascimento { get; set; }
 
         public string Email { get; set; }
 

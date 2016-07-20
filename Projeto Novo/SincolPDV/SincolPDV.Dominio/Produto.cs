@@ -22,17 +22,14 @@ namespace SincolPDV.Dominio
 
         public int? FabricanteID { get; set; }
 
-        [ForeignKey("FabricanteID")]
         public Fabricante Fabricante { get; set; }
 
         public int? FornecedorID { get; set; }
 
-        [ForeignKey("FornecedorID")]
         public Fornecedor Fornecedor { get; set; }
 
         public int? MarcaID { get; set; }
 
-        [ForeignKey("MarcaID")]
         public Marca Marca { get; set; }
 
         public string Imagem { get; set; }
@@ -53,7 +50,6 @@ namespace SincolPDV.Dominio
 
         public int EstoqueID { get; set; }
 
-        [ForeignKey("EstoqueID")]
         public Estoque Estoque { get; set; }
 
         public string Peso { get; set; }
