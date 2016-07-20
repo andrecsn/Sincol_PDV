@@ -8,7 +8,7 @@ using SincolPDV.Dominio;
 
 namespace SincolPDV.Repositorio.Implementacao
 {
-    public class DadosBancariosRepositorio : Repositorio<DadosBancariosRepositorio>
+    public class DadosBancariosRepositorio : Repositorio<DadosBancarios>
     {
         //aqui implementar ops metodos especificos da classe
         public void Metodo()

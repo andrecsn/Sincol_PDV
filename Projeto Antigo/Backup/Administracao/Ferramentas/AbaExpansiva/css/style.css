@@ -1,0 +1,119 @@
+a { text-decoration:none }
+.container { width:262px; margin:0 auto; padding-top:200px; }
+
+.bar { width:100%; height:35px; padding:15px 0; background:url(../images/bar.png) repeat-x; }
+.container  
+{
+	width: 263px;
+	margin: 0 auto;
+	position: absolute;
+	top: -185px;
+	left: 499px;
+}
+
+.container2  
+{
+	width: 263px;
+	margin: 0 auto;
+	position: absolute;
+	top: 15px;
+	left: 330px;
+}
+
+/*-------LOGIN STARTS HERE -------*/
+
+/* Login Container (default to float:right) */
+.loginContainer, .loginContainer2 {
+    position:relative;
+    float:right;
+    font-size:12px;
+}
+
+/* Login Button */
+.loginButton, .loginButton2
+{
+    display: inline-block;
+    float: right;
+    background: #333333; 
+    border: 1px solid #333333;
+    border-radius: 0 0 5px 5px;
+	-moz-border-radius: 0 0 5px 5px;
+	-webkit-border-radius: 0 0 5px 5px;
+    position: relative;
+    z-index: 30;
+    cursor: pointer;
+}
+
+/* Login Button Text */
+.loginButton span, .loginButton2 span
+{
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 7px 29px 9px 10px;
+    background: url(../images/loginArrow.png) no-repeat 68px 7px;
+    display: block;
+}
+.loginButton2 span{background: url(../images/loginArrow.png) no-repeat 106px 7px;}
+
+.loginButton.active span {
+    background-position:68px -76px;
+}
+
+.loginButton2.active span {
+    background-position:106px -76px;
+}
+
+.loginButton:hover {
+    background: #000000;
+}
+
+/* Login Box */
+.loginBox, .loginBox2 {
+    position:absolute;
+    top:32px;
+    right:0;
+    z-index:29;
+}
+
+/* Caixa com o Formulário */
+.loginForm, .loginForm2
+{
+    width: 300px;
+    border: 1px solid #000000;
+    border-radius: 10px 0 10px 10px;
+    -moz-border-radius: 5px 0 5px 5px;
+    -webkit-border-radius: 5px 0 5px 5px;
+    margin-top: -1px;
+    background: #333333;
+    padding: 6px;
+}
+
+.loginForm2{width: 560px;}
+
+fieldset.body
+{
+    background: #F8F8F8;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    padding: 10px 13px;
+    margin: 0;
+}
+
+
+/* Legenda do final da caixa */
+.loginForm span, .loginForm2 span {
+    text-align:center;
+    display:block;
+    padding:7px 0 4px 0;
+}
+
+.loginForm span a, .loginForm2 span a
+{
+    color: #FFFFFF;
+    font-size: 12px;
+}
+
+input:focus {
+    outline:none;
+}

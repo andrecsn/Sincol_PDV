@@ -1,0 +1,247 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Projeto.Site1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Sistema Sincol.PDV</title>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+<!--Estilos de Formulário-->
+	<link rel="stylesheet" href="../css/estilos_formulario/jqtransform.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="../css/estilos_formulario/css/estilo.css" type="text/css" />
+	
+    <script type="text/javascript" src="Ferramentas/Uteis.js" ></script>
+	<script type="text/javascript" src="../css/estilos_formulario/js/jquery.js" ></script>
+	<script type="text/javascript" src="../css/estilos_formulario/jquery.jqtransform.js" ></script>
+	<script language="javascript">
+	    $(function () {
+	        $('form').jqTransform({ imgPath: 'jqtransformplugin/img/' });
+	    });
+	</script>
+<!--FIM Estilos de Formulário-->
+
+    <link href="css/Menu.css" rel="stylesheet" type="text/css" />
+    <link href="css/Pagina.css" rel="stylesheet" type="text/css" />
+
+<script language="javascript">
+        function cliente(link) {
+            menu_lateral.location.href = "menu_lateral/menu_cliente.aspx"
+            conteudo.location.href = "Cadastros/cliente.aspx"
+        } 
+</script>
+
+<script language="javascript">
+    function produto(link) {
+        menu_lateral.location.href = "menu_lateral/menu_produto.aspx"
+        conteudo.location.href = "Cadastros/produto.aspx"
+    } 
+</script>
+
+<script language="javascript">
+    function fornecedor(link) {
+        menu_lateral.location.href = "menu_lateral/menu_fornecedor.aspx"
+        conteudo.location.href = "Cadastros/fornecedor.aspx"
+    } 
+</script>
+<script language="javascript">
+    function saida(link) {
+        menu_lateral.location.href = "menu_lateral/menu_saida.aspx"
+        conteudo.location.href = "Operacoes/saida.aspx"
+    } 
+</script>
+
+<script language="javascript">
+    function entrada(link) {
+        menu_lateral.location.href = "menu_lateral/menu_entrada.aspx"
+        conteudo.location.href = "Operacoes/entrada.aspx"
+    } 
+</script>
+<script language="javascript">
+    function inventario(link) {
+        menu_lateral.location.href = "menu_lateral/menu_inventario.aspx"
+        conteudo.location.href = "Operacoes/inventario.aspx"
+    } 
+</script>
+
+<script language="javascript">
+    function transferencia(link) {
+        menu_lateral.location.href = "menu_lateral/sem_menu.aspx"
+        conteudo.location.href = "Operacoes/transferencia.aspx"
+    } 
+</script>
+
+<script language="javascript">
+    function crm(link) {
+        menu_lateral.location.href = "menu_lateral/menu_crm.aspx"
+        conteudo.location.href = "Operacoes/crm.aspx"
+    } 
+</script>
+
+<script language="javascript">
+    function emprestimo(link) {
+        menu_lateral.location.href = "menu_lateral/menu_emprestimo.aspx"
+        conteudo.location.href = "Operacoes/emprestimo.aspx"
+    } 
+</script>
+
+<script language="javascript">
+    function backup(link) {
+        menu_lateral.location.href = "menu_lateral/sem_menu.aspx"
+        conteudo.location.href = "Configuracoes/backup.aspx"
+    } 
+</script>
+
+<script language="javascript">
+    function usuarios(link) {
+        menu_lateral.location.href = "menu_lateral/menu_usuarios.aspx"
+        conteudo.location.href = "Cadastros/usuarios.aspx"
+    } 
+
+    function fabricante(link) {
+        menu_lateral.location.href = "menu_lateral/sem_menu.aspx"
+        location.href = "javascript:Popup('../Ferramentas/MiniConsulta/MiniConsulta.aspx?Tabela=Fabricante&ColCod=Fab_Codigo&ColDesc=Fab_descricao');"
+    }
+
+    function filial(link) {
+        menu_lateral.location.href = "menu_lateral/sem_menu.aspx"
+        location.href = "javascript:Popup('../Ferramentas/MiniConsulta/MiniConsulta.aspx?Tabela=Filial&ColCod=Fil_Codigo&ColDesc=Fil_descricao');"
+    } 
+</script>
+
+</head>
+<body>
+
+    <form id="form2" runat="server">
+
+<div class='tarja'>
+</div>
+<div class='tudão'>
+
+    <div class='topo'>
+    <div class='logo'></div>
+
+    <div class='dados_login'>
+
+        <table class='table_topo' border="0" cellpadding="6" cellspacing="6" 
+            width="100%">
+            <tr>
+                <td align="right" width="130">
+                    Código de Acesso:</td>
+                <td width="333">
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td align="right">
+                    Nome:</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td align="right">
+                    Perfil:</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            </table>
+
+    </div>
+
+    <div class="logout">
+    <div id="form1" style="margin: 0px; padding: 0px; width: 150px;">
+          <asp:Button class='button_logout' ID="Button1" runat="server" onclick="btnLogout_Click" Text="Sair do Sistema" />
+          </div>
+    </div>
+
+    </div>
+
+    <div class="menu">
+<div id='cssmenu'>
+  <ul>
+   <li class='active '><a href='index.aspx'><span>Home</span></a></li>
+   <li class='has-sub '><a href='#'><span>Cadastro</span></a>
+      <ul>
+         <li><a href='javascript:cliente()'><span>Cliente</span></a></li>
+         <li><a href="javascript:produto()"><span>Produto</span></a></li>
+         <li><a href='javascript:fornecedor()'><span>Fornecedor</span></a></li>
+         <li><font color="#CCCCCC">--------------------------</font></li>
+         <li><a href='javascript:fabricante()' target='conteudo'><span>Fabricante</span></a></li>
+         <li><a href='javascript:filial()'><span>Filial</span></a></li>
+         <li><a href='#'><span>Forma de Pagamento</span></a></li>
+         <li><font color="#CCCCCC">--------------------------</font></li>
+         <li><a href='javascript:usuarios()'><span>Usuários</span></a></li>
+      </ul>
+   </li>
+   <li class='has-sub '><a href='#'><span>Operações</span></a>
+      <ul>
+         <li><a href='javascript:saida()'><span>Saída</span></a></li>
+         <li><a href='javascript:entrada()'><span>Entrada</span></a></li>
+         <li><font color="#CCCCCC">--------------------------</font></li>
+         <li><a href='javascript:emprestimo()'><span>Emprestimo</span></a></li>
+         <li><font color="#CCCCCC">--------------------------</font></li>
+         <li><a href='#'><span>Estoque</span></a></li>
+         <li><font color="#CCCCCC">--------------------------</font></li>
+         <li><a href='javascript:transferencia()'><span>Transferência</span></a></li>
+         <li><a href='javascript:crm()'><span>CRM</span></a></li>
+         <li><font color="#CCCCCC">--------------------------</font></li>
+         <li><a href='javascript:inventario()'><span>Inventário</span></a></li>
+      </ul>
+   </li>
+   <li class='has-sub '><a href='#'><span>Financeiro</span></a>
+      <ul>
+         <li><a href='#'><span>Contas a Receber</span></a></li>
+         <li><a href='#'><span>Contas a Pagar</span></a></li>
+         <li><font color="#CCCCCC">--------------------------</font></li>
+         <li><a href='#'><span>Conta Corrente</span></a></li>
+         <li><font color="#CCCCCC">--------------------------</font></li>
+         <li><a href='#'><span>Fluxo de Caixa</span></a></li>
+         <li><font color="#CCCCCC">--------------------------</font></li>
+         <li><a href='#'><span>Fechamento de Caixa</span></a></li>
+      </ul>
+   </li>
+   <li class='has-sub '><a href='#'><span>Relatórios</span></a>
+      <ul>
+         <li><a href='#'><span>Ranking</span></a></li>
+         <li><a href='#'><span>Mapa de Estoque</span></a></li>
+         <li><a href='#'><span>Emprestimos</span></a></li>
+      </ul>
+   </li>
+   <li class='has-sub '><a href='#'><span>Configurações</span></a>
+      <ul>
+         <li><a href='#'><span>Sobre</span></a></li>
+         <li><a href='#'><span>Ajuda</span></a></li>
+         <li><a href='#'><span>Contato</span></a></li>
+         <li><a href='javascript:backup()'><span>Backup</span></a></li>
+      </ul>
+   </li>
+</ul>
+</div>
+</div>
+
+    <div class='corpo'>
+
+    <div class='menu_lateral'>
+    <iframe name="menu_lateral" width="100%" height="100%" frameborder="0" scrolling="yes" src="menu_lateral/menu_cliente.aspx"></iframe>
+    </div>
+
+    <div class='conteudo'>
+    <iframe name="conteudo" width="100%" height="100%" frameborder="0" scrolling="yes" src="Cadastros/cliente.aspx"></iframe>
+    </div>
+
+    <div class='menu_rapido'>
+    <iframe name="menu_rapido" width="100%" height="100%" frameborder="0" scrolling="yes" src="menu_rapido.aspx"></iframe>
+    </div>
+
+    </div>
+
+    </form>
+
+</body>
+
+<div class='rodape'>
+© Copyright 2014 www.sincolsoftware.com.br - Todos os Direitos Reservados
+</div>
+
+</html>

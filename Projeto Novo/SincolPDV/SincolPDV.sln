@@ -1,17 +1,24 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dominio", "Dominio", "{37D0B386-F4BC-4436-A925-42BBE2E32770}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SincolPDV.Dominio", "SincolPDV.Dominio\SincolPDV.Dominio.csproj", "{25D7840D-2F9C-4087-8EB3-27D2DB579086}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aplicacao", "Aplicacao", "{B0A57D11-6FB0-4B52-8C5E-0A69A510C8CE}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repositorio", "Repositorio", "{72EF2389-E13E-4F72-BABA-B535679E91AF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SincolPDV.Repositorio", "SincolPDV.Repositorio\SincolPDV.Repositorio.csproj", "{C8AB7CFC-1F4E-4473-9D6C-3285EDCF26B2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aplicacao", "Aplicacao", "{C9D51AE2-E0AE-4363-B9EB-C544F8DC4BB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SincolPDV.Aplicacao", "SincolPDV.Aplicacao\SincolPDV.Aplicacao.csproj", "{9060079B-3EED-4884-8680-AE4D3288932D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{4089E9F8-0F9C-41E2-BF23-68A650663DF9}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +34,10 @@ Global
 		{C8AB7CFC-1F4E-4473-9D6C-3285EDCF26B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8AB7CFC-1F4E-4473-9D6C-3285EDCF26B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8AB7CFC-1F4E-4473-9D6C-3285EDCF26B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9060079B-3EED-4884-8680-AE4D3288932D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9060079B-3EED-4884-8680-AE4D3288932D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9060079B-3EED-4884-8680-AE4D3288932D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9060079B-3EED-4884-8680-AE4D3288932D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -34,5 +45,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{25D7840D-2F9C-4087-8EB3-27D2DB579086} = {37D0B386-F4BC-4436-A925-42BBE2E32770}
 		{C8AB7CFC-1F4E-4473-9D6C-3285EDCF26B2} = {72EF2389-E13E-4F72-BABA-B535679E91AF}
+		{9060079B-3EED-4884-8680-AE4D3288932D} = {C9D51AE2-E0AE-4363-B9EB-C544F8DC4BB5}
 	EndGlobalSection
 EndGlobal

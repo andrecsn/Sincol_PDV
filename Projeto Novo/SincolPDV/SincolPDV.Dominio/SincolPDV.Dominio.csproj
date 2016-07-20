@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,21 +46,35 @@
     <Compile Include="DadosBancarios.cs" />
     <Compile Include="Entrada.cs" />
     <Compile Include="EntradaProduto.cs" />
+    <Compile Include="Estoque.cs" />
     <Compile Include="Fabricante.cs" />
     <Compile Include="Fornecedor.cs" />
+    <Compile Include="FuncaoUsuario.cs" />
     <Compile Include="Inventario.cs" />
     <Compile Include="InventarioProduto.cs" />
+    <Compile Include="Marca.cs" />
     <Compile Include="PerfilAcesso.cs" />
     <Compile Include="PerfilTransacao.cs" />
     <Compile Include="Produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Saida.cs" />
+    <Compile Include="Status.cs" />
     <Compile Include="Transacao.cs" />
     <Compile Include="Transferencia.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
