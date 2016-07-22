@@ -20,8 +20,7 @@ namespace SincolPDV.Repositorio.Compartilhado
         public DbSet<Cliente> Cliente { get; set; }
         public DbSet<CRM> CRM { get; set; }
         public DbSet<DadosBancarios> DadosBancarios { get; set; }
-        public DbSet<Entrada> Entrada { get; set; }
-        public DbSet<EntradaProduto> EntradaProduto { get; set; }
+        public DbSet<EntradaProdutos> EntradaProdutos { get; set; }
         public DbSet<Fabricante> Fabricante { get; set; }
         public DbSet<Marca> Marca { get; set; }
         public DbSet<Fornecedor> Fornecedor { get; set; }

@@ -418,6 +418,7 @@
     <Content Include="Views\Fornecedor\DetalhesFornecedor.cshtml" />
     <Content Include="Views\Fornecedor\EditarFornecedor.cshtml" />
     <Content Include="Views\Fornecedor\Index.cshtml" />
+    <Content Include="Views\Produto\NovoCodigoDeBarras.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

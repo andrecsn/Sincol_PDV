@@ -18,6 +18,7 @@ namespace SincolPDV.Aplicacao.Controllers
         private FabricanteRepositorio fabricanteRepositorio = new FabricanteRepositorio();
         private MarcaRepositorio marcaRepositorio = new MarcaRepositorio();
         private EstoqueRepositorio estoqueRepositorio = new EstoqueRepositorio();
+        private EntradaProdutoRepositorio entradaProdutoRepositorio = new EntradaProdutoRepositorio();
         private StatusRepositorio statusRepositorio = new StatusRepositorio();
 
         private static int UsuarioPai()
@@ -204,6 +205,57 @@ namespace SincolPDV.Aplicacao.Controllers
         }
 
 
+
+        //================================ CÓDIGO DE BARRAS ==============================//
+        //===============================================================================//
+
+        #region Ações de Fabricante
+
+        public JsonResult PreencheGridCodigoBarras(int id)
+        {
+            List<EntradaProdutos> entradaProduto = entradaProdutoRepositorio.ListarTodos().Where(x => x.Produto.ProdutoID == id).ToList();
+
+            return Json(new { data = entradaProduto }, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult NovoCodigoDeBarras(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            EntradaProdutos entradaProdutos = new EntradaProdutos();
+            var codigoBarra = entradaProdutoRepositorio.Listar(x => x.ProdutoID == id).FirstOrDefault();
+
+            if(codigoBarra == null)
+                entradaProdutos.Produto = produtoRepositorio.Listar(x => x.ProdutoID == id).FirstOrDefault();
+
+            if (entradaProdutos == null)
+            {
+                return HttpNotFound();
+            }
+            return View(entradaProdutos);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult NovoCodigoDeBarras(EntradaProdutos entradaProduto)
+        {
+            if (entradaProduto.CodigoBarras != 0)
+            {
+                entradaProduto.UsuarioID = UsuarioRepositorio.UsuarioLogado.UsuarioID;
+                entradaProduto.DtEntrada = DateTime.Now;
+
+                entradaProdutoRepositorio.Adicionar(entradaProduto);
+                entradaProdutoRepositorio.SalvarTodos();
+
+                //return RedirectToAction("NovoCodigoDeBarras");
+            }
+
+            return View(entradaProduto);
+        }
+
+        #endregion
 
         //================================== FABRICANTE =================================//
         //===============================================================================//

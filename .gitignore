@@ -48,3 +48,4 @@ Temporary Items
 *.user
 Projeto Novo/SincolPDV/SincolPDV.Aplicacao/Properties/PublishProfiles/Local.pubxml.user
 *.pdb
+*.cache

@@ -44,8 +44,7 @@
     <Compile Include="Cliente.cs" />
     <Compile Include="CRM.cs" />
     <Compile Include="DadosBancarios.cs" />
-    <Compile Include="Entrada.cs" />
-    <Compile Include="EntradaProduto.cs" />
+    <Compile Include="EntradaProdutos.cs" />
     <Compile Include="Estoque.cs" />
     <Compile Include="Fabricante.cs" />
     <Compile Include="Fornecedor.cs" />
