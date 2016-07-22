@@ -167,6 +167,13 @@
                 })
             });
 
+            $('#GridProduto tbody').on('click', '.codigoBarras', function () {
+                var data = $(this).parent().parent().find('span').data('codigo');
+                $("#modal").load("NovoCodigoDeBarras?id=" + data, function () {
+                    $("#modal").modal('show');
+                })
+            });
+
         });
 
         //Gerando DataTables ao clicar no 'Pesquisar'
@@ -226,7 +233,8 @@
                                 data: null,
                                 defaultContent: '<button class="btn btn-xs btn-default details"><i class="glyphicon glyphicon-file"></i></button> ' +
                                                 '<button class="btn btn-xs btn-danger delete"><i class="glyphicon glyphicon-trash"></i></button> ' +
-                                                '<button class="btn btn-xs btn-primary edit"><i class="glyphicon glyphicon-edit"></i></button>',
+                                                '<button class="btn btn-xs btn-primary edit"><i class="glyphicon glyphicon-edit"></i></button> ' +
+                                                '<button class="btn btn-xs btn-primary codigoBarras"><i class="glyphicon glyphicon-edit"></i></button>',
                                 orderable: false
                             },
                         ]
@@ -284,7 +292,8 @@
                         data: null,
                         defaultContent: '<button class="btn btn-xs btn-default details"><i class="glyphicon glyphicon-file"></i></button> ' +
                                         '<button class="btn btn-xs btn-danger delete"><i class="glyphicon glyphicon-trash"></i></button> ' +
-                                        '<button class="btn btn-xs btn-primary edit"><i class="glyphicon glyphicon-edit"></i></button>',
+                                        '<button class="btn btn-xs btn-primary edit"><i class="glyphicon glyphicon-edit"></i></button> ' +
+                                        '<button class="btn btn-xs btn-primary codigoBarras"><i class="glyphicon glyphicon-edit"></i></button>',
                         orderable: false
                     },
                 ]

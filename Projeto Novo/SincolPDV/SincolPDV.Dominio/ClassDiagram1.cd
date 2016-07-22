@@ -3,7 +3,7 @@
   <Class Name="SincolPDV.Dominio.Cliente">
     <Position X="12.5" Y="3.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>CAAIAAAEkKAAAAAAgBAAAACAAAAIAAQAAAIAAAEAEgA=</HashCode>
+      <HashCode>CAAIAAAMkKAAAAAAgBAAAACAACAIAAQAAAMAAAEAEgA=</HashCode>
       <FileName>Cliente.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -17,45 +17,21 @@
   <Class Name="SincolPDV.Dominio.DadosBancarios">
     <Position X="35.25" Y="3.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAAQgAAAAAAAAAAAAAgAA=</HashCode>
+      <HashCode>AAAAAAgMAAABAAAAAAAAAAAAAQgAAAAAAAEAAAAAgAA=</HashCode>
       <FileName>DadosBancarios.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="SincolPDV.Dominio.Entrada">
-    <Position X="4.75" Y="3.75" Width="2.75" />
-    <Compartments>
-      <Compartment Name="Nested Types" Collapsed="false" />
-    </Compartments>
-    <NestedTypes>
-      <Enum Name="SincolPDV.Dominio.Entrada.FormasPagamento" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>Entrada.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Enum>
-    </NestedTypes>
-    <TypeIdentifier>
-      <HashCode>AAAAAAAgAAABAIAAAAAAAAgAEAAEAAAAAAACAAEAAAE=</HashCode>
-      <FileName>Entrada.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="SincolPDV.Dominio.EntradaProduto">
-    <Position X="40.75" Y="3.75" Width="2" />
-    <TypeIdentifier>
-      <HashCode>AAAACAAAAIAAAIAAAAAAAAAAAAAAAAAAAAAQIAAAAAE=</HashCode>
-      <FileName>EntradaProduto.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SincolPDV.Dominio.Fabricante">
     <Position X="21.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAABAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAMAAABAAAAAAAAAgAAAAAAAAAAAAEAAAAAAAA=</HashCode>
       <FileName>Fabricante.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SincolPDV.Dominio.Fornecedor">
     <Position X="26.5" Y="3.75" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AIAAAAAEgCAAAAACEAAAAACAAAAIAAAAAAAAAAEAEgA=</HashCode>
+      <HashCode>AIAAAAgMgKAAAAACEAAAAACAACAIAAAAAAEAAAEAEgA=</HashCode>
       <FileName>Fornecedor.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -76,21 +52,21 @@
   <Class Name="SincolPDV.Dominio.PerfilAcesso">
     <Position X="43.5" Y="3.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <HashCode>AAAAAAAMAAABAIAAAAAAAAAAAAAAAAAQAAEAAgAAAAA=</HashCode>
       <FileName>PerfilAcesso.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SincolPDV.Dominio.PerfilTransacao">
     <Position X="38" Y="3.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAEEAACABAQBAAAABAAQAAAAEAAQAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAEEAACABAABAAAABAAQAAAAEAAQAAA=</HashCode>
       <FileName>PerfilTransacao.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SincolPDV.Dominio.Produto">
     <Position X="23.75" Y="3.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAACBAEAARJABAAAAgABAQAEAAQABQACAgAAkEIAgQ=</HashCode>
+      <HashCode>AAABCBAsAARBAQAAEAAQBgAAECAQABQAAAkCAEEIAgQ=</HashCode>
       <FileName>Produto.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -128,13 +104,20 @@
   <Class Name="SincolPDV.Dominio.Usuario">
     <Position X="29.75" Y="3.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAEAAAAAAAAAAAAAAQAAKAAAAAAAAAQAAEAAAA=</HashCode>
+      <HashCode>AAAAAAAMgCAAAAAAAAAQAAQAAKAAAAAAAAEQAgEAIAA=</HashCode>
       <FileName>Usuario.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="System.Object">
     <Position X="3.75" Y="0.5" Width="2.25" />
     <TypeIdentifier />
+  </Class>
+  <Class Name="SincolPDV.Dominio.EntradaProdutos">
+    <Position X="5" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAQAAAAAAAIAEAAAAAAAEAAAIAAE=</HashCode>
+      <FileName>EntradaProdutos.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

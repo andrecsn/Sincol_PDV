@@ -60,7 +60,7 @@
     <Compile Include="Implementacao\ClienteRepositorio.cs" />
     <Compile Include="Implementacao\CRMRepositorio.cs" />
     <Compile Include="Implementacao\DadosBancariosRepositorio.cs" />
-    <Compile Include="Implementacao\EntradaRepositorio.cs" />
+    <Compile Include="Implementacao\EntradaProdutoRepositorio.cs" />
     <Compile Include="Implementacao\EstoqueRepositorio.cs" />
     <Compile Include="Implementacao\FabricanteRepositorio.cs" />
     <Compile Include="Implementacao\FornecedorRepositorio.cs" />
@@ -150,6 +150,10 @@
     <Compile Include="Migrations\201607201805214_acertoCliente.Designer.cs">
       <DependentUpon>201607201805214_acertoCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607211741594_EntradaProduto.cs" />
+    <Compile Include="Migrations\201607211741594_EntradaProduto.Designer.cs">
+      <DependentUpon>201607211741594_EntradaProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -229,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607201805214_acertoCliente.resx">
       <DependentUpon>201607201805214_acertoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607211741594_EntradaProduto.resx">
+      <DependentUpon>201607211741594_EntradaProduto.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
