@@ -15,10 +15,6 @@ namespace SincolPDV.Repositorio.Migrations
             RenameColumn(table: "dbo.Usuario", name: "PerfilAcesso_PerfilAcessoID", newName: "PerfilAcessoID");
             AlterColumn("dbo.Usuario", "FuncaoUsuarioID", c => c.Int(nullable: false));
             AlterColumn("dbo.Usuario", "PerfilAcessoID", c => c.Int(nullable: false));
-            CreateIndex("dbo.Usuario", "FuncaoUsuarioID");
-            CreateIndex("dbo.Usuario", "PerfilAcessoID");
-            AddForeignKey("dbo.Usuario", "FuncaoUsuarioID", "dbo.FuncaoUsuario", "FuncaoUsuarioID", cascadeDelete: true);
-            AddForeignKey("dbo.Usuario", "PerfilAcessoID", "dbo.PerfilAcesso", "PerfilAcessoID", cascadeDelete: true);
         }
         
         public override void Down()

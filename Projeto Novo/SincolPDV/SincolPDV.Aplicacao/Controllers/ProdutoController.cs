@@ -224,12 +224,10 @@ namespace SincolPDV.Aplicacao.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             EntradaProdutos entradaProdutos = new EntradaProdutos();
-            var codigoBarra = entradaProdutoRepositorio.Listar(x => x.ProdutoID == id).FirstOrDefault();
-
-            if(codigoBarra == null)
-                entradaProdutos.Produto = produtoRepositorio.Listar(x => x.ProdutoID == id).FirstOrDefault();
-
+            entradaProdutos.Produto = produtoRepositorio.Listar(x => x.ProdutoID == id).FirstOrDefault();
+                
             if (entradaProdutos == null)
             {
                 return HttpNotFound();
@@ -249,10 +247,41 @@ namespace SincolPDV.Aplicacao.Controllers
                 entradaProdutoRepositorio.Adicionar(entradaProduto);
                 entradaProdutoRepositorio.SalvarTodos();
 
-                //return RedirectToAction("NovoCodigoDeBarras");
+                entradaProduto.Produto = produtoRepositorio.Listar(X => X.ProdutoID == entradaProduto.ProdutoID).FirstOrDefault();
             }
-
+            
             return View(entradaProduto);
+        }
+
+        public ActionResult DeletarCodigoBarras(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            EntradaProdutos entradaProduto = entradaProdutoRepositorio.Listar(x => x.EntradaID == id).FirstOrDefault();
+            if (entradaProduto == null)
+            {
+                return HttpNotFound();
+            }
+            return View(entradaProduto);
+        }
+
+        [HttpPost, ActionName("DeletarCodigoBarras")]
+        [ValidateAntiForgeryToken]
+        public void DeleteConfirmed5(EntradaProdutos codigoBarras)
+        {
+            try
+            {
+                EntradaProdutos entradaProduto = entradaProdutoRepositorio.Listar(x => x.EntradaID == codigoBarras.EntradaID).FirstOrDefault();
+
+                entradaProdutoRepositorio.Excluir(x => x == entradaProduto);
+                entradaProdutoRepositorio.SalvarTodos();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         #endregion

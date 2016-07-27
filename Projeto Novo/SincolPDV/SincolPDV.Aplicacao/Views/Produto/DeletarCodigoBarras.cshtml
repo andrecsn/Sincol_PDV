@@ -1,0 +1,55 @@
+﻿@model SincolPDV.Dominio.EntradaProdutos
+
+@{
+    ViewBag.Title = "Deletar Código de Barras";
+    Layout = null;
+}
+
+<div class="modal-dialog modal-sm">
+    <div class="modal-content">
+        <div class="modal-header alert-danger">
+            <button type="button" class="close btnSair"><i class="fa fa-times"></i><span class="sr-only">Close</span></button>
+            <h3 class="modal-title"><i class="fa fa-trash"></i> Deletar Código de Barras</h3>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="box-body">
+
+                    <h4>Deseja realmente deletar o Código de Barras <b> @Model.CodigoBarras? </b></h4>
+
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            @using (Html.BeginForm("", "", FormMethod.Post, new { id = "formDados2" }))
+            {
+                @Html.AntiForgeryToken()
+
+                @Html.HiddenFor(model => model.EntradaID)
+
+                <button type="button" class="btn btn-danger" onclick="DeletarModal('/Produto/DeletarCodigoBarras', '#modal2', 'Código de Barras deletado com sucesso!')"><i class="fa fa-trash"></i> Deletar</button>
+                <a href="#" class="btn btn-default btnSair"><i class="fa fa-sign-out"></i> Fechar</a>
+            }
+        </div>
+    </div>
+</div>
+
+<script>
+
+    $(document).ready(function () {
+        //Gerando datatable
+        GeraDataTablePopUp();
+
+        //Botões PopUp
+        $('.btnSair').on('click', function () {
+            event.preventDefault();
+              $("#modal2").modal('hide');
+        });
+
+    });
+
+</script>
+
+
+
+
